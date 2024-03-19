@@ -10,15 +10,15 @@ public class TextPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             isPanel = !isPanel;
         }
-
         if (isPanel)
         {
             ActivatePanel();
         }
+
         else
         {
             DeactivatePanel();
