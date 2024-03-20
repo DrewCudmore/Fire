@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 1866656647414412596}
   - component: {fileID: 7661760202444794814}
   - component: {fileID: 5774461786173875459}
+  - component: {fileID: 5787089129618305578}
+  - component: {fileID: 6653995110299508180}
+  - component: {fileID: 5188365636986736902}
   m_Layer: 0
-  m_Name: default
+  m_Name: BaseFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,61 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7670544268576839143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5220074609617954273}
-  - component: {fileID: -5523755554664548994}
-  - component: {fileID: 4100601374125782391}
-  m_Layer: 0
-  m_Name: Camp fire
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5220074609617954273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7670544268576839143}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.7, y: -1.33, z: 25.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5984569625337789649}
-  - {fileID: 1866656647414412596}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5523755554664548994
+--- !u!114 &5787089129618305578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7670544268576839143}
+  m_GameObject: {fileID: 1488893258743131247}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55f501b0272c843858fb82643f51844e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 10
---- !u!82 &4100601374125782391
+--- !u!82 &6653995110299508180
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7670544268576839143}
+  m_GameObject: {fileID: 1488893258743131247}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -227,6 +195,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &5188365636986736902
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488893258743131247}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4553204
+  m_Height: 4.6611524
+  m_Direction: 1
+  m_Center: {x: -0.011342288, y: 1.17867, z: -0.012956383}
+--- !u!1 &7670544268576839143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5220074609617954273}
+  m_Layer: 0
+  m_Name: Camp fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5220074609617954273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670544268576839143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7, y: -1.33, z: 25.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5984569625337789649}
+  - {fileID: 1866656647414412596}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2826673422035221570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: m_Name
-      value: Fire_PSys
+      value: FireParticles
       objectReference: {fileID: 0}
     - target: {fileID: 8374209163406573714, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -333,17 +357,17 @@ PrefabInstance:
     - target: {fileID: 8374209164447748105, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 4.141e-42
+      value: 9.816115e+28
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164447748105, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 6e-44
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164447748105, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.7e-44
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
