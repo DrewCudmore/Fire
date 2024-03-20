@@ -9766,6 +9766,7 @@ GameObject:
   - component: {fileID: 1209902264}
   - component: {fileID: 1209902269}
   - component: {fileID: 1209902268}
+  - component: {fileID: 1209902270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9904,6 +9905,22 @@ MonoBehaviour:
   speed: 12
   gravity: -9.81
   jumpHeight: 3
+--- !u!114 &1209902270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209902263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123ecbde480924e83b99b5e01dfe0781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPosition: {x: 0, y: 0, z: 0}
+  transitionSpeed: 20
+  bobSpeed: 12.76
+  bobAmount: 13.53
 --- !u!1001 &1220427172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13965,6 +13982,7 @@ GameObject:
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
+  - component: {fileID: 1687258588}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14102,8 +14120,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0624cc61dc549da9c0f534dd082f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restPosition: {x: 0, y: 0, z: 0}
+  transitionSpeed: 20
+  bobSpeed: 4.8
+  bobAmount: 0.05
   mouseSensitivity: 300
   playerBody: {fileID: 1209902267}
+--- !u!114 &1687258588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123ecbde480924e83b99b5e01dfe0781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPosition: {x: 0, y: 0, z: 0}
+  transitionSpeed: 20
+  bobSpeed: 4.8
+  bobAmount: 0.05
 --- !u!1001 &1688972756
 PrefabInstance:
   m_ObjectHideFlags: 0

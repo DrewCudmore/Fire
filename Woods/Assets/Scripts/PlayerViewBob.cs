@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCam : MonoBehaviour
+public class PlayerViewBob : MonoBehaviour
 {
-    // view bob
     public Vector3 restPosition;
     public float transitionSpeed = 20f;
     public float bobSpeed = 4.8f;
@@ -11,29 +12,13 @@ public class PlayerCam : MonoBehaviour
     float timer = Mathf.PI / 2;
     Vector3 camPos;
 
-    public float mouseSensitivity = 100f;
-    public Transform playerBody;
-
-    float xRotation = 0f;
-
     void Awake() { camPos = transform.localPosition; }
-    void Start() { Cursor.lockState = CursorLockMode.Locked; }
 
+    // Start is called before the first frame update
+    void Start() { }
+
+    // Update is called once per frame
     void Update()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
-
-        HeadBob();
-    }
-
-    void HeadBob()
     {
         if (Input.GetAxisRaw("Horizontal") != 0 ||
             Input.GetAxisRaw("Vertical") != 0)
