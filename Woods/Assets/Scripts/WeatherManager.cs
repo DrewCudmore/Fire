@@ -113,6 +113,7 @@ public class WeatherManager : MonoBehaviour
         if (rainParticleSystem != null && rainParticleSystem.isPlaying)
         {
             rainParticleSystem.Stop();
+            rainParticleSystem.Clear();
         }
     }
 

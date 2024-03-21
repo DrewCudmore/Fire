@@ -4730,7 +4730,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -11982,12 +11982,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed0cb6b83666ad94ea9fbf08b3ed5d46, type: 3}
---- !u!4 &872167142 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3394956790909324380, guid: 232241c4030929146b8c0b57349f65a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1549353694}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &906211514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 627794028581629184, guid: ed0cb6b83666ad94ea9fbf08b3ed5d46,
@@ -14619,12 +14613,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4de9cfc6da7eef349881466ae54ea745, type: 3}
---- !u!4 &1199267855 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2069797885948091226, guid: 7ece6646ef2475b44959032f5d55a8f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1315732368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1210556863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18213,12 +18201,9 @@ Transform:
   - {fileID: 1571486633}
   - {fileID: 1083125103}
   - {fileID: 380651798}
-  - {fileID: 1857841679}
-  - {fileID: 872167142}
   - {fileID: 925013732}
   - {fileID: 744889398}
   - {fileID: 463761215}
-  - {fileID: 1199267855}
   m_Father: {fileID: 1387326338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1591235200
@@ -25160,12 +25145,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 822091779}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1857841679 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5977549091374805509, guid: dd1832de68cba8f48960216dac3c4f3e,
-    type: 3}
-  m_PrefabInstance: {fileID: 102907638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1858978515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2782439222529678998, guid: 3fa00dcc0e0e277429b3f8dedaec5507,
@@ -27913,5 +27892,4 @@ SceneRoots:
   - {fileID: 1387326338}
   - {fileID: 940818317}
   - {fileID: 8537649867901210728}
-  - {fileID: 661715412}
   - {fileID: 806289578}
