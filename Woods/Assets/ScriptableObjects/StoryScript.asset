@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: StoryScript
   m_EditorClassIdentifier: 
   allTextEntries:
-  - texts: []
+  - texts:
+    - 
