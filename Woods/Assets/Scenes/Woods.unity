@@ -1099,13 +1099,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7096718157698906110, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 648985030}
+    - target: {fileID: 7096718157698906110, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 316632763068086966, guid: 716a734132a8049da85060cf17426b1f,
+        type: 3}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Name
       value: Camp fire
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2365053292879925330, guid: 3acd7266fee14439184be0eb045c3e95, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2046,6 +2056,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7096718157698906110, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 648985030}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Name
@@ -4348,6 +4363,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7096718157698906110, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 648985030}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Name
@@ -5427,6 +5447,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2782439222529678998, guid: 3fa00dcc0e0e277429b3f8dedaec5507,
     type: 3}
   m_PrefabInstance: {fileID: 461229594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &648985030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 191160247721672993, guid: 716a734132a8049da85060cf17426b1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1060115565}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &649494948
 PrefabInstance:
@@ -7490,6 +7516,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7096718157698906110, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 648985030}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Name
