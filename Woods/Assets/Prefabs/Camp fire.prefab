@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   flames: {fileID: 1057695119628116093}
+  spawnPoint: {fileID: 670925047380210677}
   maxDistance: 10
 --- !u!82 &6653995110299508180
 AudioSource:

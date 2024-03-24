@@ -4,11 +4,13 @@ public class Campfire : MonoBehaviour, IInteractable
 {
     public bool isLit;
     public GameObject flames;
+    public Transform spawnPoint;
 
     public float maxDistance = 10f; // Max distance at which the audio will be heard at full volume
 
     private AudioSource audioSource;
-    private GameObject player; 
+    private GameObject player;
+    private GameManager gameManager;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class Campfire : MonoBehaviour, IInteractable
         audioSource.loop = true;
         audioSource.playOnAwake = false;
         audioSource.volume = 0;
+        gameManager = GameManager.Instance;
     }
 
     void Update()
@@ -46,7 +49,10 @@ public class Campfire : MonoBehaviour, IInteractable
 
         isLit = true;
         flames.SetActive(true);
-        //audioSource.enabled = true;
+        print("Spawn: " + spawnPoint.position);
+        gameManager.SetCheckpoint(spawnPoint);
+        print(spawnPoint.position);
+
     }
 
     public void Interact()
