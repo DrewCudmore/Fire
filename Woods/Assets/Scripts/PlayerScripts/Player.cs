@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            gameManager.ShowDeathScreen("Player Pressed R");
+            gameManager.KillPlayer("Player Pressed R");
             //this.transform.position = new Vector3(1, 1, 1);
         }
 

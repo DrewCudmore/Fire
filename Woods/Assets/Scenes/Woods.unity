@@ -4497,6 +4497,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 192894081}
     m_Modifications:
+    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.649
+      objectReference: {fileID: 0}
+    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.209
+      objectReference: {fileID: 0}
+    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.341
+      objectReference: {fileID: 0}
     - target: {fileID: 5220074609617954273, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11522,13 +11537,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794893271}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9983766, z: -0, w: 0.056958284}
-  m_LocalPosition: {x: 1.8119993, y: 1.6065865, z: 3.1770048}
+  m_LocalRotation: {x: -0, y: -0.99205786, z: -0, w: 0.12578271}
+  m_LocalPosition: {x: 1.879983, y: 1.5100002, z: 3.7699957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 517228189}
-  m_LocalEulerAnglesHint: {x: 0, y: -173.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -165.548, z: 0}
 --- !u!1001 &796589388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12417,9 +12432,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940818311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9970192, z: -0, w: -0.077154085}
-  m_LocalPosition: {x: -4.6775, y: -0.25, z: 30.201}
-  m_LocalScale: {x: 1.221, y: 1.221, z: 1.221}
+  m_LocalRotation: {x: -0, y: 0.9970192, z: -0, w: -0.077154085}
+  m_LocalPosition: {x: -4.6775055, y: -0.25, z: 30.201004}
+  m_LocalScale: {x: 1.2209998, y: 1.221, z: 1.2209998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1682472996}
@@ -28205,8 +28220,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -28557,6 +28572,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 212343992}
   - {fileID: 1387326338}
-  - {fileID: 940818317}
   - {fileID: 8537649867901210728}
   - {fileID: 806289578}
+  - {fileID: 940818317}

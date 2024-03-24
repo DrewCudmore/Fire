@@ -49,9 +49,7 @@ public class Campfire : MonoBehaviour, IInteractable
 
         isLit = true;
         flames.SetActive(true);
-        print("Spawn: " + spawnPoint.position);
         gameManager.SetCheckpoint(spawnPoint);
-        print(spawnPoint.position);
 
     }
 

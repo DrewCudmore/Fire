@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    private GameObject player;
+    PlayerMovement playerMovement;
     private Transform lastCheckpoint;
 
     public float fadeDuration = 1f;
@@ -14,6 +16,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI deathText;
 
     private bool waitForInput = false;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
+    }
 
     private void Awake()
     {
@@ -40,9 +48,9 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
+
         if (lastCheckpoint != null)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
                 player.transform.position = lastCheckpoint.position;
@@ -57,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("No checkpoint set!");
         }
+
     }
 
     public void LoadScene(string sceneName)
@@ -64,9 +73,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void ShowDeathScreen(string deathReason)
+    public void KillPlayer(string deathReason)
     {
         fadePanel.gameObject.SetActive(true);
+
+        if (playerMovement != null)
+        {
+            playerMovement.disableMovement();
+        }
 
         StartCoroutine(FadeToDeathScreen(deathReason));
     }
@@ -86,7 +100,7 @@ public class GameManager : MonoBehaviour
 
         // Show death text
         deathText.gameObject.SetActive(true);
-        deathText.text = "You died!\n" + deathReason + "\nPress Space to Respawn";
+        deathText.text = "You died!\nCause of death: " + deathReason + "\nPress Space to Respawn";
         waitForInput = true;
 
         // Wait for spacebar input
@@ -116,5 +130,11 @@ public class GameManager : MonoBehaviour
         // Disable canvas elements after fading back
         fadePanel.gameObject.SetActive(false);
         deathText.gameObject.SetActive(false);
+
+        // Renable movement
+        if (playerMovement != null)
+        {
+            playerMovement.enableMovement();
+        }
     }
 }
