@@ -8,34 +8,44 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
 
     Vector3 velocity;
+    bool canMove = true; // Flag to control player movement
 
     void Update()
     {
-        // Check if grounded
+        if (!canMove)
+            return; // Don't execute movement if movement is disabled
+
         bool isGrounded = controller.isGrounded;
 
-        // If grounded, reset velocity
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
-        // Get input for movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // Move based on input
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = this.transform.right * x + this.transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
-        // Apply gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        // Jumping
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+
+    public void enableMovement()
+    {
+        canMove = true;
+    }
+
+    public void disableMovement()
+    {
+        canMove = false;
+    }
+
+
 }
