@@ -53,8 +53,10 @@ public class Campfire : MonoBehaviour, IInteractable
 
     }
 
-    public void Interact()
+    public Item Interact()
     {
         LightFire();
+
+        return Item.None;
     }
 }

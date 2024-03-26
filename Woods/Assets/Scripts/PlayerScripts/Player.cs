@@ -8,36 +8,20 @@ public class Player : MonoBehaviour
     private float interactionRange = 4f;
     private GameManager gameManager;
 
+    private List<Item> inventory = new List<Item>();
+
     private void Start()
     {
         gameManager = GameManager.Instance;
     }
 
-    private void Awake()
+    void Update()
     {
-        //gameManager = GameManager.Instance;
-
-        //// Not needed for initial spawn
-        //if (gameManager && gameManager.getLastCheckpoint() != null)
-        //{
-            
-        //    Transform spawn = gameManager.getLastCheckpoint();
-
-        //    this.transform.position = spawn.position;
-        //    this.transform.rotation = spawn.rotation;
-        //}
-
-        //print(gameManager);
-
-        //if (gameManager)
-        //{
-        //    print(gameManager.getLastCheckpoint());
-        //}
-        
-
+        HandleInteractions();
+        HandleRestartInput();
     }
 
-    void Update()
+    private void HandleInteractions()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -45,22 +29,57 @@ public class Player : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
             {
-                // Check if the hit object is interactable
                 if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
-                    interactable.Interact();
+                    AddToInventory(interactable.Interact());
+                }
+            }
+        }
+    }
+
+    private void HandleRestartInput()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameManager.KillPlayer("Player Pressed 'R'");
+        }
+    }
+
+    // If this class gets too large, we can extract inventory management to a singleton InventoryManager
+    private void AddToInventory(Item item)
+    {
+        if (item != Item.None)
+        {
+            inventory.Add(item);
+        }
+    }
+
+    public void RemoveFromInventory(Item item)
+    {
+        if (inventory.Contains(item))
+        {
+            inventory.Remove(item);
+        }
+    }
+
+    public bool CheckInventory(Item item, int num = 1)
+    {
+        int itemCount = 0;
+
+        foreach (Item inventoryItem in inventory)
+        {
+            if (inventoryItem == item)
+            {
+                itemCount++;
+                if (itemCount >= num)
+                {
+                    return true; 
                 }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            gameManager.KillPlayer("Player Pressed R");
-            //this.transform.position = new Vector3(1, 1, 1);
-        }
-
+        return false;
     }
-
 
 
 }
