@@ -32,7 +32,6 @@ public class Tree : MonoBehaviour, IInteractable
             ShakeTreeTime();
         }
         
-        
     }
 
     private void ShakeTreeTime()

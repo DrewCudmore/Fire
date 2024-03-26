@@ -27,6 +27,11 @@ public class Campfire : MonoBehaviour, IInteractable
 
     void Update()
     {
+        HandleProximityAudio();
+    }
+
+    void HandleProximityAudio()
+    {
         if (player == null)
         {
             Debug.LogWarning("Player GameObject not found.");
@@ -40,7 +45,6 @@ public class Campfire : MonoBehaviour, IInteractable
             float volume = 1f - Mathf.Clamp01(distanceToPlayer / maxDistance);
             audioSource.volume = volume;
         }
-       
     }
 
     void LightFire()

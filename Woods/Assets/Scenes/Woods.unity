@@ -6759,10 +6759,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128732111}
   m_SourcePrefab: {fileID: 100100000, guid: c78b2f6da8c496044acf68bbb77bee45, type: 3}
 --- !u!1001 &272111669
 PrefabInstance:
@@ -68730,6 +68744,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 823f16f50f72c0242ab39f52e52762fd, type: 3}
+--- !u!1 &2128732107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
+    type: 3}
+  m_PrefabInstance: {fileID: 271476993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128732111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128732107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20094c97b51e14d9395e2844a66f4862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2129302324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
