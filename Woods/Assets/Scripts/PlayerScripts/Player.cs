@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public Transform cam;
     private float interactionRange = 4f;
     private GameManager gameManager;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
+            if (Physics.Raycast(cam.position, cam.forward, out hit, interactionRange))
             {
                 if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
