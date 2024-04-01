@@ -2,106 +2,124 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed;
+    public Rigidbody rb;
+    public Camera playerCam;
 
-    public float groundDrag;
+    // camera
+    public float fov = 70f;
+    public bool cameraCanMove = true;
+    public float mouseSens = 2f;
+    public float maxLookAngle = 90f;
+    // can add a crosshair
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
 
-    [Header("Ground Check")]
-    public float playerHeight;
-    public LayerMask GroundLayer;
-    bool grounded;
+    // movement
+    public bool canMove;
+    public float walkSpeed = 5f;
+    public float maxVelChange = 10f; // changes how quickly you accelerate?
+    private bool isWalking = false;
 
-    public Transform orientation;
+    // jump
+    public bool enableJump = true; // change this name later
+    public KeyCode jumpKey = KeyCode.Space;
+    public float jumpForce = 5f;
+    private bool isGrounded;
 
-    float horizontalInput;
-    float verticalInput;
+    // view bobbing
+    public bool enableViewBob = true;
+    public Transform joint;
+    public float bobSpeed = 10f;
+    public Vector3 bobAmount = new Vector3(.15f, .05f, 0f);
+    private Vector3 jointOriginPos;
+    private float timer;
 
-    Vector3 moveDirection;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
 
-    Rigidbody rb;
-    public bool canMove = true;
+        playerCam.fieldOfView = fov;
+        jointOriginPos = joint.localPosition;
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-    }
-
-    private void FixedUpdate()
-    {
-        MovePlayer();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        // checks ground every frame
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, GroundLayer);
-
-        MyInput();
-
-        // slows player down while on ground (ground drag)
-        // we can probably use a material if we want to
-        if (grounded)
+        if (cameraCanMove)
         {
-            rb.drag = groundDrag;
+            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSens;
+            pitch -= Input.GetAxis("Mouse Y") * mouseSens;
+            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+
+            transform.localEulerAngles = new Vector3(0, yaw, 0);
+            playerCam.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+        }
+
+        GroundCheck();
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove)
+        {
+            Vector3 targetVel = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); // change to get axis raw and create custom smoothing
+
+            if (targetVel.x != 0 || targetVel.z != 0 && isGrounded)
+            {
+                isWalking = true;
+            }
+            else
+            {
+                isWalking = false;
+            }
+        }
+    }
+
+    private void GroundCheck()
+    {
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 direction = transform.TransformDirection(Vector3.down);
+        float distance = 0.75f;
+
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
+        {
+            //Debug.DrawRay(origin, direction * distance, Color.red);
+            isGrounded = true;
         }
         else
         {
-            rb.drag = 0;
+            isGrounded = false;
         }
     }
 
-    void MyInput()
+    private void Jump()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (isGrounded)
+        {
+            rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
-    void MovePlayer()
+    private void ViewBob()
     {
-        // calculates movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        if (isWalking)
+        {
+            timer += Time.deltaTime * bobSpeed;
+            joint.localPosition = new Vector3(jointOriginPos.x + Mathf.Sin(timer) * bobAmount.x, jointOriginPos.y + Mathf.Sin(timer) /* change this to cos? */ * bobAmount.y, jointOriginPos.z + Mathf.Sin(timer) * bobAmount.z);
+        }
+        else
+        {
+            timer = 0;
+            float timeBob = Time.deltaTime * bobSpeed;
+            joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginPos.x, timeBob), Mathf.Lerp(joint.localPosition.y, jointOriginPos.y, timeBob), Mathf.Lerp(joint.localPosition.z, jointOriginPos.z, timeBob));
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
     }
-
-
-    // old
-    //public CharacterController controller;
-    //public float speed = 12f;
-    //public float gravity = -9.81f;
-    //public float jumpHeight = 3f;
-
-    //Vector3 velocity;
-    //bool canMove = true; // Flag to control player movement
-
-    //void Update()
-    //{
-    //    if (!canMove)
-    //        return; // Don't execute movement if movement is disabled
-
-    //    bool isGrounded = controller.isGrounded;
-
-    //    if (isGrounded && velocity.y < 0)
-    //    {
-    //        velocity.y = -2f;
-    //    }
-
-    //    float x = Input.GetAxis("Horizontal");
-    //    float z = Input.GetAxis("Vertical");
-
-    //    Vector3 move = this.transform.right * x + this.transform.forward * z;
-    //    controller.Move(move * speed * Time.deltaTime);
-
-    //    velocity.y += gravity * Time.deltaTime;
-    //    controller.Move(velocity * Time.deltaTime);
-
-    //    if (isGrounded && Input.GetButtonDown("Jump"))
-    //    {
-    //        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-    //    }
-    //}
 
     public void enableMovement()
     {
