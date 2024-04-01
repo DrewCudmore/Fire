@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (cameraCanMove)
+        if (canMove)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSens;
             pitch -= Input.GetAxis("Mouse Y") * mouseSens;
@@ -57,6 +57,16 @@ public class PlayerMovement : MonoBehaviour
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCam.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+        }
+
+        if (enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
+        {
+            Jump();
+        }
+
+        if (enableViewBob)
+        {
+            ViewBob();
         }
 
         GroundCheck();
@@ -76,6 +86,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 isWalking = false;
             }
+
+            targetVel = transform.TransformDirection(targetVel) * walkSpeed;
+
+            Vector3 vel = rb.velocity;
+            Vector3 velChange = (targetVel - vel);
+            velChange.x = Mathf.Clamp(velChange.x, -maxVelChange, maxVelChange);
+            velChange.z = Mathf.Clamp(velChange.z, -maxVelChange, maxVelChange);
+            velChange.y = 0;
+
+            rb.AddForce(velChange, ForceMode.VelocityChange);
         }
     }
 
