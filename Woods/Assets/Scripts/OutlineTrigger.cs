@@ -20,10 +20,7 @@ public class OutlineTrigger : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, Distance);
-        active =  hit.collider.gameObject == gameObject;
-
-
+        active = Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, Distance);
 
         if (active == true)
         {
@@ -36,7 +33,6 @@ public class OutlineTrigger : MonoBehaviour
         else if (active == false)
         {
             outline.enabled = false;
-            //outline.OutlineMode = Outline.Mode.OutlineHidden;
         }
     }
 
