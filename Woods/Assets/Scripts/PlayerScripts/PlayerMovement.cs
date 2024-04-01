@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
+        if (canMove && !PauseMenu.isPaused)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSens;
             pitch -= Input.GetAxis("Mouse Y") * mouseSens;
