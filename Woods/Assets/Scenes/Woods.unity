@@ -2596,11 +2596,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1362259298}
+      addedObject: {fileID: 1362259299}
     - targetCorrespondingSourceObject: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1362259299}
+      addedObject: {fileID: 1362259298}
   m_SourcePrefab: {fileID: 100100000, guid: c78b2f6da8c496044acf68bbb77bee45, type: 3}
 --- !u!1001 &273816938
 PrefabInstance:
@@ -11314,7 +11314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 766241912}
-  Distance: 3
+  Distance: 4
   active: 0
   player: {fileID: 304722615}
 --- !u!114 &1362259299
