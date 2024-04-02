@@ -48872,8 +48872,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3ac6ccf7b85498f9daf7e24f8e2dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLight: {fileID: 0}
+  myLight: {fileID: 1804831279}
   deincrementLight: 2
+--- !u!108 &1804831279 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+    type: 3}
+  m_PrefabInstance: {fileID: 265643193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806533877
 PrefabInstance:
   m_ObjectHideFlags: 0
