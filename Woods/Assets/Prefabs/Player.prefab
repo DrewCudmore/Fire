@@ -5045,12 +5045,13 @@ MonoBehaviour:
   cameraCanMove: 1
   mouseSens: 2
   maxLookAngle: 90
+  gravityMultiplier: 2
   canMove: 1
   walkSpeed: 5
   maxVelChange: 10
   enableJump: 1
   jumpKey: 32
-  jumpForce: 5
+  jumpForce: 7.5
   enableViewBob: 1
   joint: {fileID: 6402867366814690877}
   bobSpeed: 10
