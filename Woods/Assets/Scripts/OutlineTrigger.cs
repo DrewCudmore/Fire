@@ -7,12 +7,14 @@ public class OutlineTrigger : MonoBehaviour
     public Transform cam;
     public float Distance;
     public bool active = false;
-    GameObject[] interactables;
+    GameObject[] interactablesOld;
+    List<GameObject> interactables = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        interactables = GameObject.FindGameObjectsWithTag("Interactable");
+        interactablesOld = GameObject.FindGameObjectsWithTag("Interactable");
+        interactables.AddRange(interactablesOld);
         foreach (GameObject obj in interactables)
         {
             obj.AddComponent<Outline>();
@@ -24,17 +26,26 @@ public class OutlineTrigger : MonoBehaviour
     {
         foreach (GameObject obj in interactables)
         {
-            Vector3 diff = obj.transform.position - cam.position;
-            float curDistance = diff.sqrMagnitude;
-
-            if (curDistance <= Distance)
+            if (obj == null)
             {
-                Highlight(obj);
+                interactables.Remove(obj);
+                break;
             }
             else
             {
-                Unhighlight(obj);
+                Vector3 diff = obj.transform.position - cam.position;
+                float curDistance = diff.sqrMagnitude;
+
+                if (curDistance <= Distance)
+                {
+                    Highlight(obj);
+                }
+                else
+                {
+                    Unhighlight(obj);
+                }
             }
+            //interactables.Remove(obj);
         }
     }
 
