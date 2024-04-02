@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public Camera playerCam;
 
-    // camera
+    [Header("Camera")]
     public float fov = 70f;
     public bool cameraCanMove = true;
     public float mouseSens = 2f;
@@ -14,19 +14,20 @@ public class PlayerMovement : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
-    // movement
+    [Header("Movement")]
+    public float gravityMultiplier = 2;
     public bool canMove;
     public float walkSpeed = 5f;
     public float maxVelChange = 10f; // changes how quickly you accelerate?
     private bool isWalking = false;
 
-    // jump
+    [Header("Jump")]
     public bool enableJump = true; // change this name later
     public KeyCode jumpKey = KeyCode.Space;
     public float jumpForce = 5f;
     private bool isGrounded;
 
-    // view bobbing
+    [Header("View Bobbing")]
     public bool enableViewBob = true;
     public Transform joint;
     public float bobSpeed = 10f;
@@ -45,14 +46,15 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        rb.useGravity = false;
     }
 
     private void Update()
     {
         if (canMove && !PauseMenu.isPaused)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSens;
-            pitch -= Input.GetAxis("Mouse Y") * mouseSens;
+            yaw = transform.localEulerAngles.y + Input.GetAxisRaw("Mouse X") * mouseSens;
+            pitch -= Input.GetAxisRaw("Mouse Y") * mouseSens;
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
@@ -74,9 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 newGravity = new Vector3(0, Physics.gravity.y * gravityMultiplier, 0);
         if (canMove)
         {
-            Vector3 targetVel = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); // change to get axis raw and create custom smoothing
+            Vector3 targetVel = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized; // change to get axis raw and create custom smoothing
 
             if (targetVel.x != 0 || targetVel.z != 0 && isGrounded)
             {
@@ -90,12 +93,13 @@ public class PlayerMovement : MonoBehaviour
             targetVel = transform.TransformDirection(targetVel) * walkSpeed;
 
             Vector3 vel = rb.velocity;
-            Vector3 velChange = (targetVel - vel);
+            Vector3 velChange = (targetVel - vel) + newGravity;
             velChange.x = Mathf.Clamp(velChange.x, -maxVelChange, maxVelChange);
             velChange.z = Mathf.Clamp(velChange.z, -maxVelChange, maxVelChange);
-            velChange.y = 0;
+            velChange.y = 0; // Physics.gravity.y * gravityMultiplier;
 
             rb.AddForce(velChange, ForceMode.VelocityChange);
+            rb.AddForce(transform.up * newGravity.y);
         }
     }
 
