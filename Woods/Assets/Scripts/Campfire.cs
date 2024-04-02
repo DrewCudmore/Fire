@@ -11,12 +11,14 @@ public class Campfire : MonoBehaviour, IInteractable
     private AudioSource audioSource;
     private GameObject player;
     private GameManager gameManager;
+    private GameObject lantern;
 
     void Start()
     {
         isLit = false;
         flames.SetActive(false);
 
+        lantern = GameObject.FindGameObjectWithTag("Lantern");
         player = GameObject.FindGameObjectWithTag("Player");
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
@@ -49,7 +51,11 @@ public class Campfire : MonoBehaviour, IInteractable
 
     void LightFire()
     {
-        if (isLit) return;
+        if (isLit)
+        {
+            lantern.GetComponent<Light>().intensity = 5;
+            return;
+        }
 
         isLit = true;
         flames.SetActive(true);
