@@ -6779,6 +6779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
       propertyPath: m_Convex
@@ -13076,7 +13081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167008714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -13084,7 +13089,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 4
   active: 0
-  player: {fileID: 940818311}
 --- !u!1 &521273332
 GameObject:
   m_ObjectHideFlags: 0
@@ -29246,6 +29250,7 @@ GameObject:
   - component: {fileID: 940818313}
   - component: {fileID: 940818312}
   - component: {fileID: 940818318}
+  - component: {fileID: 940818319}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -29398,6 +29403,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1682472996}
+--- !u!114 &940818319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940818311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1682472996}
+  Distance: 10
+  active: 0
 --- !u!1001 &941167934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42643,7 +42663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411739048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -42651,7 +42671,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 3
   active: 0
-  player: {fileID: 940818311}
 --- !u!1001 &1413446962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43959,7 +43978,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559911037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -43967,7 +43986,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 3
   active: 0
-  player: {fileID: 940818311}
 --- !u!4 &1465571967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6421219028290145318, guid: 823f16f50f72c0242ab39f52e52762fd,
@@ -55896,7 +55914,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942367313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -55904,7 +55922,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 3
   active: 0
-  player: {fileID: 940818311}
 --- !u!1 &1701084124
 GameObject:
   m_ObjectHideFlags: 0
@@ -67027,7 +67044,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246089953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -67035,7 +67052,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 3
   active: 0
-  player: {fileID: 940818311}
 --- !u!1001 &2088735334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68904,7 +68920,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128732107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
   m_Name: 
@@ -68912,7 +68928,6 @@ MonoBehaviour:
   cam: {fileID: 1682472996}
   Distance: 4
   active: 0
-  player: {fileID: 940818311}
 --- !u!4 &2129302324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,

@@ -7,33 +7,49 @@ public class OutlineTrigger : MonoBehaviour
     public Transform cam;
     public float Distance;
     public bool active = false;
-    public GameObject player;
-    Outline outline;
+    GameObject[] interactables;
 
     // Start is called before the first frame update
     void Start()
     {
-        outline = gameObject.AddComponent<Outline>();
+        interactables = GameObject.FindGameObjectsWithTag("Interactable");
+        foreach (GameObject obj in interactables)
+        {
+            obj.AddComponent<Outline>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        active = Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, Distance);
-
-        if (active == true)
+        foreach (GameObject obj in interactables)
         {
-            outline.enabled = true;
-            outline.OutlineMode = Outline.Mode.OutlineVisible;
-            outline.OutlineColor = Color.white;
-            outline.OutlineWidth = 10f;
-        }
+            Vector3 diff = obj.transform.position - cam.position;
+            float curDistance = diff.sqrMagnitude;
 
-        else if (active == false)
-        {
-            outline.enabled = false;
+            if (curDistance <= Distance)
+            {
+                Highlight(obj);
+            }
+            else
+            {
+                Unhighlight(obj);
+            }
         }
     }
 
+    void Highlight(GameObject closeObj)
+    {
+        Outline outline = closeObj.GetComponent<Outline>();
+        outline.enabled = true;
+        outline.OutlineMode = Outline.Mode.OutlineAll;
+        outline.OutlineColor = Color.white;
+        outline.OutlineWidth = 10f;
+    }
+
+    void Unhighlight(GameObject notCloseObj)
+    {
+        Outline outline = notCloseObj.GetComponent<Outline>();
+        outline.enabled = false;
+    }
 }
