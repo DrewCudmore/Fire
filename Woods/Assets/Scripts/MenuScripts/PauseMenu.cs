@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     public void DeactivateMenu()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1; //normal time
         AudioListener.pause = false;
         //puts away pause menu
