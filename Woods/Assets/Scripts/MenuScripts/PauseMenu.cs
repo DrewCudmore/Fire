@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
 
-    [SerializeField] private bool isPaused;
+    [SerializeField] public static bool isPaused;
 
     private void Update()
     {
