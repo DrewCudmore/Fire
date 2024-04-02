@@ -584,12 +584,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7758037}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9340650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 618373227307919547, guid: b40ebb8c661404cb9960fc5f83633022,
-    type: 3}
-  m_PrefabInstance: {fileID: 265643193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &10740361
 GameObject:
   m_ObjectHideFlags: 0
@@ -12607,7 +12601,6 @@ GameObject:
   - component: {fileID: 500146004}
   - component: {fileID: 500146003}
   - component: {fileID: 500146006}
-  - component: {fileID: 500146007}
   m_Layer: 0
   m_Name: BrokenBridge
   m_TagString: Untagged
@@ -12714,22 +12707,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: fb7383cb48c4c9d4cade41743b8f4740, type: 3}
---- !u!114 &500146007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500146001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2978bfdd37e42e191c6980d2eb8636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 463373882}
-  Distance: 3
-  active: 0
-  player: {fileID: 9340650}
 --- !u!1001 &501265936
 PrefabInstance:
   m_ObjectHideFlags: 0
