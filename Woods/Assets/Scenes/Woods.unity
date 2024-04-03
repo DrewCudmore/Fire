@@ -12603,7 +12603,7 @@ GameObject:
   - component: {fileID: 500146006}
   m_Layer: 0
   m_Name: BrokenBridge
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53616,6 +53616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287424507931335886, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: Distance
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
