@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour, IInteractable
 {
+    public bool CanInteract { get; set; } = false;
+
     [SerializeField] private float timer_cooldown = 1f;
     private bool timer_locked_out = false;
     private GameObject player;
@@ -66,7 +68,7 @@ public class Tree : MonoBehaviour, IInteractable
         Item item = Item.None;
 
         // Player needs axe to chop
-        if (!playerHasAxe())
+        if (CanInteract == false)
         {
             return item;
         }
@@ -86,20 +88,4 @@ public class Tree : MonoBehaviour, IInteractable
 
         return item;
     }
-
-    private bool playerHasAxe()
-    {
-        if (player != null)
-        {
-            Player playerScript = player.GetComponent<Player>();
-
-            if (playerScript != null)
-            {
-                return playerScript.CheckInventory(Item.Axe);
-            }
-        }
-        Debug.Log("Tree Reporting player/script is null");
-        return false;
-    }
-
 }

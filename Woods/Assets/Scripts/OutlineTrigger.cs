@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class OutlineTrigger : MonoBehaviour
@@ -7,60 +8,101 @@ public class OutlineTrigger : MonoBehaviour
     public Transform cam;
     public float Distance;
     public bool active = false;
-    GameObject[] interactablesOld;
+
+    // Arraylist in case we need to add/remove interactables
     List<GameObject> interactables = new List<GameObject>();
 
-    // Start is called before the first frame update
     void Start()
     {
-        interactablesOld = GameObject.FindGameObjectsWithTag("Interactable");
-        interactables.AddRange(interactablesOld);
-        foreach (GameObject obj in interactables)
+        GetInteractables();
+        AddOutlines();
+    }
+
+    void Update()
+    {
+        HightlightInteractables();
+    }
+
+    void GetInteractables()
+    {
+        // Get all objects that implement the interactable interface
+        MonoBehaviour[] interactableObjects = FindObjectsOfType<MonoBehaviour>().Where(obj => obj is IInteractable).ToArray();
+
+        foreach (var interactable in interactableObjects)
         {
-            obj.AddComponent<Outline>();
+            interactables.Add(interactable.gameObject);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void AddOutlines()
     {
         foreach (GameObject obj in interactables)
         {
-            if (obj == null)
+            if (obj.GetComponent<Outline>() == null)
+            {
+                obj.AddComponent<Outline>();
+            }
+        }
+    }
+
+    void HightlightInteractables()
+    {
+        foreach (GameObject obj in interactables.ToArray())
+        {
+            if (obj == null || obj.GetComponent<IInteractable>() == null)
             {
                 interactables.Remove(obj);
-                break;
+                continue; // Skip current iteration for null object
             }
-            else
+
+            IInteractable interactable = obj.GetComponent<IInteractable>();
+            if (interactable.CanInteract)
             {
+    
+                // Calculate the distance between the interactable object and the camera
                 Vector3 diff = obj.transform.position - cam.position;
                 float curDistance = diff.sqrMagnitude;
 
+                // Highlight or unhighlight the object based on distance
                 if (curDistance <= Distance)
                 {
                     Highlight(obj);
                 }
                 else
                 {
+                    // If the object is not enabled for interaction, unhighlight it
                     Unhighlight(obj);
                 }
             }
-            //interactables.Remove(obj);
+            else
+            {
+                // If the object can't interact, unhighlight it
+                Unhighlight(obj);
+            }
         }
     }
 
+
     void Highlight(GameObject closeObj)
     {
+        // Enable outline for the close object
         Outline outline = closeObj.GetComponent<Outline>();
-        outline.enabled = true;
-        outline.OutlineMode = Outline.Mode.OutlineAll;
-        outline.OutlineColor = Color.white;
-        outline.OutlineWidth = 10f;
+        if (outline != null)
+        {
+            outline.enabled = true;
+            outline.OutlineMode = Outline.Mode.OutlineAll;
+            outline.OutlineColor = Color.white;
+            outline.OutlineWidth = 10f;
+        }
     }
 
     void Unhighlight(GameObject notCloseObj)
     {
+        // Disable outline for the not close object
         Outline outline = notCloseObj.GetComponent<Outline>();
-        outline.enabled = false;
+        if (outline != null)
+        {
+            outline.enabled = false;
+        }
     }
 }

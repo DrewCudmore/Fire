@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Campfire : MonoBehaviour, IInteractable
 {
+    public bool CanInteract { get; set; } = true;
+
     public bool isLit;
     public GameObject flames;
     public Transform spawnPoint;
@@ -66,6 +68,8 @@ public class Campfire : MonoBehaviour, IInteractable
     public Item Interact()
     {
         LightFire();
+        this.CanInteract = false;
+        
 
         return Item.None;
     }

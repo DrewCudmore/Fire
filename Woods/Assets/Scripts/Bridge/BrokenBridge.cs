@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BrokenBridge : MonoBehaviour, IInteractable
 {
+    public bool CanInteract { get; set; } = false;
+
     public Item Interact()
     {
         if (transform.parent != null)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -52,7 +53,45 @@ public class Player : MonoBehaviour
         {
             inventory.Add(item);
         }
+
+        HandleInventoryInteractions(item);
     }
+
+    private void HandleInventoryInteractions(Item item)
+    {
+        if (item == Item.Axe)
+        {
+            EnableChoppingTrees();
+        }
+        else if (item == Item.Wood && inventory.Count(item => item == Item.Wood) >= 3)
+        {
+            EnableFixingBridge();
+        }
+    }
+
+    private void EnableChoppingTrees()
+    {
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("ChoppableTree");
+
+        foreach (GameObject tree in trees)
+        {
+            if (tree.GetComponent<IInteractable>() != null)
+            {
+                tree.GetComponent<IInteractable>().CanInteract = true;
+            }
+        }
+    }
+
+    private void EnableFixingBridge()
+    {
+        BrokenBridge brokenBridge = FindObjectOfType<BrokenBridge>();
+        IInteractable interactableBridge = brokenBridge.GetComponent<IInteractable>();
+        if (interactableBridge != null)
+        {
+            interactableBridge.CanInteract = true;
+        }
+    }
+
 
     public void RemoveFromInventory(Item item)
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public interface IInteractable
 {
+    bool CanInteract { get; set; }
     Item Interact();
 }
 

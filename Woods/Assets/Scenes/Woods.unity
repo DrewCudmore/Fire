@@ -1997,6 +1997,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &69765862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69765854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!4 &70156349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 152010713808285276, guid: 8c4ec5ecd3f85a64890c5af503662d8e,
@@ -2700,6 +2717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2770,11 +2792,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 754021983}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 754021984}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &105025639 stripped
 Transform:
@@ -4232,6 +4267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camp fire
       objectReference: {fileID: 0}
+    - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2365053292879925330, guid: 3acd7266fee14439184be0eb045c3e95, type: 3}
     m_RemovedGameObjects:
@@ -5101,6 +5141,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &196953115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196953107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1001 &197142864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5793,6 +5850,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &220499114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220499106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!4 &226188480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
@@ -5811,6 +5885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pine Tree (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
       objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
@@ -5882,6 +5961,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -5891,6 +5975,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1002074125}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1002074129}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &228699276 stripped
 Transform:
@@ -6770,7 +6858,7 @@ PrefabInstance:
     - target: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
@@ -8866,6 +8954,40 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &344476681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344476673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
+--- !u!114 &344476682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344476673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 1
+  treeSpeed: 0
+  treeShakeAmount: 0
+  shakeTree: 0
+  hitsToDie: 0
 --- !u!1 &346435794
 GameObject:
   m_ObjectHideFlags: 0
@@ -8985,6 +9107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -9055,6 +9182,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -9064,6 +9196,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 347636128}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 347636132}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &347636126 stripped
 Transform:
@@ -9099,6 +9235,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &347636132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347636127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1001 &349656437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12603,7 +12756,7 @@ GameObject:
   - component: {fileID: 500146006}
   m_Layer: 0
   m_Name: BrokenBridge
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15785,6 +15938,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &598329068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598329060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1 &598663965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7902782058626511503, guid: d27fbefa80b0acb4991a6bc8cf0e8f0f,
@@ -15992,6 +16162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -16062,6 +16237,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -16071,6 +16251,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1929603402}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929603406}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &611706714 stripped
 Transform:
@@ -20414,6 +20598,51 @@ PrefabInstance:
       addedObject: {fileID: 959179283}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5991b8efe7e0044888b9058f6d3119f, type: 3}
+--- !u!1 &754021979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 103253532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &754021983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754021979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
+--- !u!64 &754021984
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754021979}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
 --- !u!1001 &756238504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26476,6 +26705,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &1002074129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002074121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1001 &1003212191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32332,6 +32578,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -32402,6 +32653,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -32411,6 +32667,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 196953111}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 196953115}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &1256465185 stripped
 Transform:
@@ -37127,6 +37387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -37197,6 +37462,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -37218,6 +37488,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 220499110}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 220499114}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!1001 &1410211782
 PrefabInstance:
@@ -39132,6 +39406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -39202,6 +39481,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -39211,6 +39495,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 598329064}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598329068}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!1001 &1477621262
 PrefabInstance:
@@ -39224,6 +39512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pine Tree (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
       objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
@@ -39295,6 +39588,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -39304,6 +39602,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1839959353}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1839959357}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &1483445353 stripped
 Transform:
@@ -44186,6 +44488,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -44256,6 +44563,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -44265,6 +44577,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 69765858}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 69765862}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &1630425424 stripped
 Transform:
@@ -50713,6 +51029,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &1839959357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839959349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1001 &1844196909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50725,6 +51058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pine Tree (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868933241634917472, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
       objectReference: {fileID: 0}
     - target: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
@@ -50796,6 +51134,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChoppableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533793925251668621, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
     m_RemovedGameObjects: []
@@ -50805,6 +51148,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 344476677}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344476681}
+    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344476682}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!4 &1845024372 stripped
 Transform:
@@ -52972,6 +53323,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!114 &1929603406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929603398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_cooldown: 0.2
+  treeSpeed: 5
+  treeShakeAmount: 0.1
+  shakeTree: 0
+  hitsToDie: 5
 --- !u!1001 &1930323607
 PrefabInstance:
   m_ObjectHideFlags: 0
