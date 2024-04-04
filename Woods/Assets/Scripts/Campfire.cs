@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Campfire : MonoBehaviour, IInteractable
+public class Campfire : MonoBehaviour, IInteractable, IDialogue
 {
     public bool CanInteract { get; set; } = true;
+    public string dialogue { get; set; } = "New Checkpoint Set";
 
     public bool isLit;
     public GameObject flames;

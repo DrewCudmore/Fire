@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -30,13 +31,28 @@ public class Player : MonoBehaviour
 
             if (Physics.Raycast(cam.position, cam.forward, out hit, interactionRange))
             {
-                if (hit.collider.TryGetComponent(out IInteractable interactable))
-                {
-                    AddToInventory(interactable.Interact());
-                }
+                TryGettingItem(hit);
+                TryShowingDialogue(hit);
             }
         }
     }
+
+    private void TryGettingItem(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out IInteractable interactable))
+        {
+            AddToInventory(interactable.Interact());
+        }
+    }
+
+    private void TryShowingDialogue(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out IDialogue dialogueComponent))
+        {
+            TextPanel.instance.DisplayText(dialogueComponent.dialogue);
+        }
+    }
+
 
     private void HandleRestartInput()
     {

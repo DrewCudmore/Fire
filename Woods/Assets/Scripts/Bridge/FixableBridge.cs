@@ -7,9 +7,12 @@ public class FixableBridge : MonoBehaviour
     public GameObject fixedBridge;
     public GameObject brokenBridge;
     public GameObject bridgeBlocker;
+    private TextPanel textPanel;
 
     void Start()
     {
+        textPanel = FindObjectOfType<TextPanel>();
+
         fixedBridge = transform.Find("FixedBridge")?.gameObject;
         brokenBridge = transform.Find("BrokenBridge")?.gameObject;
         bridgeBlocker = transform.Find("BridgeBlocker")?.gameObject;
@@ -52,6 +55,19 @@ public class FixableBridge : MonoBehaviour
         else
         {
             Debug.LogWarning("BrokenBridge not found as a child of the Bridge GameObject.");
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (brokenBridge.activeSelf)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // Call the DisplayText method from the TextPanel script
+                textPanel.DisplayText("You can now cross the bridge!");
+            }
         }
 
     }
