@@ -9,12 +9,14 @@ public class Player : MonoBehaviour
     public Transform cam;
     private float interactionRange = 4f;
     private GameManager gameManager;
+    TextPanel textPanel;
 
     private List<Item> inventory = new List<Item>();
 
     private void Start()
     {
         gameManager = GameManager.Instance;
+        textPanel = FindObjectOfType<TextPanel>();
     }
 
     void Update()
@@ -82,8 +84,9 @@ public class Player : MonoBehaviour
         {
             EnableChoppingTrees();
         }
-        else if (item == Item.Wood && inventory.Count(item => item == Item.Wood) >= 3)
+        else if (item == Item.Wood && inventory.Count(item => item == Item.Wood) >= 2)
         {
+            textPanel.DisplayText("That should be enough wood");
             EnableFixingBridge();
         }
     }
