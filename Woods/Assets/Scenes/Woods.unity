@@ -37950,7 +37950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 0}
-  deincrementLight: 1
+  deincrementLight: 1.5
 --- !u!4 &1421463289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1975471812209823980, guid: d27fbefa80b0acb4991a6bc8cf0e8f0f,
