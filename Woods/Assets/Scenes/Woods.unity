@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 10740364}
   - component: {fileID: 10740363}
   - component: {fileID: 10740362}
+  - component: {fileID: 10740366}
   m_Layer: 2
   m_Name: BridgeBlocker
   m_TagString: Untagged
@@ -688,6 +689,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1919716703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10740366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10740361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a694c3eb2490247f4b3779ffc537abf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &11239878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 152010713808285276, guid: 8c4ec5ecd3f85a64890c5af503662d8e,

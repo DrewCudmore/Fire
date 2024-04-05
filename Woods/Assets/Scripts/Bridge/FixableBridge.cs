@@ -59,17 +59,4 @@ public class FixableBridge : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (brokenBridge.activeSelf)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // Call the DisplayText method from the TextPanel script
-                textPanel.DisplayText("You can now cross the bridge!");
-            }
-        }
-
-    }
-
 }

@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(cam.position, cam.forward, out hit, interactionRange))
             {
                 TryGettingItem(hit);
-                TryShowingDialogue(hit);
             }
         }
     }
@@ -41,7 +40,11 @@ public class Player : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out IInteractable interactable))
         {
-            AddToInventory(interactable.Interact());
+            if (interactable.CanInteract)
+            {
+                AddToInventory(interactable.Interact());
+                TryShowingDialogue(hit);
+            }
         }
     }
 

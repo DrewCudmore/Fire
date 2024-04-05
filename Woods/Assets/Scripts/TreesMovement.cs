@@ -67,12 +67,6 @@ public class Tree : MonoBehaviour, IInteractable
     {
         Item item = Item.None;
 
-        // Player needs axe to chop
-        if (CanInteract == false)
-        {
-            return item;
-        }
-
         if (!shakeTree && !timer_locked_out)
         {
             // Player receives item on final hit

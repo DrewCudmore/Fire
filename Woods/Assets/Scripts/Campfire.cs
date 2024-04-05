@@ -71,7 +71,6 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
         LightFire();
         this.CanInteract = false;
         
-
         return Item.None;
     }
 }
