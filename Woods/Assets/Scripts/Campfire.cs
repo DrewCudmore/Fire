@@ -56,8 +56,13 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
     {
         if (isLit)
         {
+            dialogue = "Lantern Flame Restored";
             lantern.GetComponent<Light>().intensity = 5;
             return;
+        }
+        else
+        {
+            dialogue = "New Checkpoint Set";
         }
 
         isLit = true;
@@ -69,7 +74,6 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
     public Item Interact()
     {
         LightFire();
-        this.CanInteract = false;
         
         return Item.None;
     }
