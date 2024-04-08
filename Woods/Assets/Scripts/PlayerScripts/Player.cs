@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     private InventoryManager inventoryManager;
 
+
     private void Start()
     {
         gameManager = GameManager.Instance;
         inventoryManager = FindObjectOfType<InventoryManager>();
+        
     }
 
     void Update()

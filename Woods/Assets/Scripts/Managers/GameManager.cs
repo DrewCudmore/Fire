@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     PlayerMovement playerMovement;
     private Transform lastCheckpoint;
 
+    private TextPanel textPanel;
+
     public float fadeDuration = 1f;
     public Image fadePanel;
     public TextMeshProUGUI deathText;
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
+        textPanel = FindObjectOfType<TextPanel>();
+        textPanel.DisplayText("Use WASD and E to interact");
     }
 
     private void Awake()

@@ -14,14 +14,12 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
     private AudioSource audioSource;
     private GameObject player;
     private GameManager gameManager;
-    private GameObject lantern;
 
     void Start()
     {
         isLit = false;
         flames.SetActive(false);
 
-        lantern = GameObject.FindGameObjectWithTag("Lantern");
         player = GameObject.FindGameObjectWithTag("Player");
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
@@ -56,9 +54,8 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
     {
         if (isLit)
         {
-            //lantern = GameObject.FindGameObjectWithTag("Lantern");
             dialogue = "Lantern Flame Restored";
-            lantern.GetComponent<Lantern>().ResetLantern();
+            player.GetComponentInChildren<Lantern>().ResetLantern();
             return;
         }
         else

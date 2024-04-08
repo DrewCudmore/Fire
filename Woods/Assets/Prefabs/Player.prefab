@@ -5083,7 +5083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 6398824659459859394}
-  Distance: 10
+  Distance: 50
   active: 0
 --- !u!1 &693911148934860994
 GameObject:
@@ -10317,10 +10317,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271045612481, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271045612481, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271045612481, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271077066284, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271077066284, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271077066284, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3395183389260424769, guid: 56c82061e6c4de742a208837848be55a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1783669267851241081}
   m_SourcePrefab: {fileID: 100100000, guid: 56c82061e6c4de742a208837848be55a, type: 3}
 --- !u!4 &6137091252873568137 stripped
 Transform:
@@ -10328,3 +10368,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6135181625077408043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8292809197282214635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6135181625077408043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1783669267851241081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292809197282214635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3ac6ccf7b85498f9daf7e24f8e2dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myLight: {fileID: 0}
+  deincrementIntensity: 1.5
+  deincrementRange: 2.25

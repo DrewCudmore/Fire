@@ -16,6 +16,8 @@ public class Lantern : MonoBehaviour
     public float deincrementRange;
     private float colorChangeRate = .0008f;
 
+    public bool resetLantern = false;
+
     private GameManager gameManager;
     //private 
     
@@ -40,6 +42,12 @@ public class Lantern : MonoBehaviour
             colorLight += colorChangeRate * Time.deltaTime;
             myLight.color = new Color(myLight.color.r, colorLight, myLight.color.b, myLight.color.a);
             checkBurnout();
+
+        }
+        if (resetLantern)
+        {
+            ResetLantern();
+            resetLantern = false;
         }
     }
 
