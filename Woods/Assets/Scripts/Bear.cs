@@ -43,16 +43,16 @@ public class Bear : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggerCounter++;
-            Debug.Log("current trigger value on enter " + triggerCounter);
+            //Debug.Log("current trigger value on enter " + triggerCounter);
             if (triggerCounter == 1)
             {
-                Debug.Log("bear started walking");
+                //Debug.Log("bear started walking");
                 ani.SetBool("Walking", true);
                 ani.SetBool("Sleeping", false);
             }
             else if (triggerCounter == 2)
             {
-                Debug.Log("bear attacked");
+                //Debug.Log("bear attacked");
                 ani.SetBool("Attack", true);
             }
         }
@@ -64,17 +64,17 @@ public class Bear : MonoBehaviour
         {
             if (triggerCounter == 2)
             {
-                Debug.Log("bear stop attack");
+                //Debug.Log("bear stop attack");
                 ani.SetBool("Attack", false);
             }
             else if (triggerCounter == 1)
             {
-                Debug.Log("bear stop walking");
+                //Debug.Log("bear stop walking");
                 ani.SetBool("Walking", false);
                 ani.SetBool("Sleeping", true);
             }
             triggerCounter--;
-            Debug.Log("current trigger value on exit " + triggerCounter);
+            //Debug.Log("current trigger value on exit " + triggerCounter);
         }
     }
 }
