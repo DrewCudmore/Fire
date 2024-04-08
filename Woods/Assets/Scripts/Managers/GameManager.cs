@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer(string deathReason)
     {
+        //Debug.Log(lantern.myLight.intensity);
+
         fadePanel.gameObject.SetActive(true);
 
         if (playerMovement != null)
