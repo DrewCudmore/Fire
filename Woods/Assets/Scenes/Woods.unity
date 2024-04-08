@@ -39451,7 +39451,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 0}
-  deincrementLight: 1.5
+  originalIntensity: 5
+  originalRange: 10
+  deincrementIntensity: 1.5
+  deincrementRange: 2.25
 --- !u!4 &1421463289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1975471812209823980, guid: d27fbefa80b0acb4991a6bc8cf0e8f0f,
@@ -55840,6 +55843,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
     - target: {fileID: 8292809197282214635, guid: b40ebb8c661404cb9960fc5f83633022,
         type: 3}
       propertyPath: m_TagString
@@ -58882,7 +58905,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 0}
-  deincrementLight: 1.5
+  originalIntensity: 0
+  originalRange: 0
+  deincrementIntensity: 0.0001
+  deincrementRange: 0
 --- !u!4 &2073283965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
