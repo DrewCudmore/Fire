@@ -14,7 +14,7 @@ public class Lantern : MonoBehaviour
 
     public float deincrementIntensity;
     public float deincrementRange;
-    private float colorChangeRate = .0008f;
+    private float colorChangeRate = .0009f;
 
     public bool resetLantern = false;
 

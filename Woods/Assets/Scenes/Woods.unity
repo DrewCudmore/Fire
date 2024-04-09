@@ -56100,10 +56100,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1783669267851241081, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: deincrementIntensity
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8282018719268340685, guid: b40ebb8c661404cb9960fc5f83633022,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.23529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292809197282214634, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
