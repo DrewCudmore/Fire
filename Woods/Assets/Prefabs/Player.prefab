@@ -4943,7 +4943,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618373227307919547}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5177,7 +5177,7 @@ Transform:
   m_GameObject: {fileID: 4461079585835815744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.077154085, z: -0, w: 0.9970192}
-  m_LocalPosition: {x: 0.19, y: 0.14, z: 0.32}
+  m_LocalPosition: {x: 0.186, y: 0.14, z: 0.083}
   m_LocalScale: {x: 0.9614173, y: 0.9614173, z: 0.9614173}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10368,6 +10368,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6135181625077408043}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &8292809197282214634 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2752105271045612481, guid: 56c82061e6c4de742a208837848be55a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6135181625077408043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8292809197282214635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
@@ -10386,6 +10392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3ac6ccf7b85498f9daf7e24f8e2dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLight: {fileID: 0}
-  deincrementIntensity: 1.5
-  deincrementRange: 2.25
+  myLight: {fileID: 8292809197282214634}
+  deincrementIntensity: 0.6
+  deincrementRange: 0.7
+  resetLantern: 0
