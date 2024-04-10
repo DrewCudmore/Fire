@@ -7,10 +7,12 @@ public class InventoryManager : MonoBehaviour
 {
     private List<Item> inventory = new List<Item>();
     private TextPanel textPanel;
+    private GameObject player;
 
     private void Start()
     {
         textPanel = FindObjectOfType<TextPanel>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void AddToInventory(Item item)
@@ -27,6 +29,8 @@ public class InventoryManager : MonoBehaviour
         if (item == Item.Axe)
         {
             EnableChoppingTrees();
+            player.GetComponent<Player>().SetAxe(true);
+
         }
         else if (item == Item.Wood && inventory.Count(i => i == Item.Wood) >= 2)
         {
@@ -70,4 +74,6 @@ public class InventoryManager : MonoBehaviour
     {
         return inventory.Count(i => i == item) >= num;
     }
+
+   
 }

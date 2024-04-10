@@ -30843,17 +30843,17 @@ PrefabInstance:
     - target: {fileID: 6269347648486557905, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.256
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 6269347648486557905, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.154
+      value: -1.093
       objectReference: {fileID: 0}
     - target: {fileID: 6269347648486557905, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.204
+      value: -0.041
       objectReference: {fileID: 0}
     - target: {fileID: 6269347648486557905, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
@@ -30898,7 +30898,12 @@ PrefabInstance:
     - target: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30908,6 +30913,12 @@ PrefabInstance:
 --- !u!4 &1003035627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6269347648486557905, guid: 2aa99bc1947a948b09b5a0e71495c100,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003035626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1003035628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
     type: 3}
   m_PrefabInstance: {fileID: 1003035626}
   m_PrefabAsset: {fileID: 0}
@@ -60780,6 +60791,11 @@ PrefabInstance:
       propertyPath: deincrementIntensity
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 7951381246549857215, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: Axe
+      value: 
+      objectReference: {fileID: 1003035628}
     - target: {fileID: 8282018719268340685, guid: b40ebb8c661404cb9960fc5f83633022,
         type: 3}
       propertyPath: m_Enabled

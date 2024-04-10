@@ -8,6 +8,7 @@ public class FixableBridge : MonoBehaviour
     public GameObject brokenBridge;
     public GameObject bridgeBlocker;
     private TextPanel textPanel;
+    private GameObject player;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class FixableBridge : MonoBehaviour
         fixedBridge = transform.Find("FixedBridge")?.gameObject;
         brokenBridge = transform.Find("BrokenBridge")?.gameObject;
         bridgeBlocker = transform.Find("BridgeBlocker")?.gameObject;
+
+        player = GameObject.FindGameObjectWithTag("Player");
 
         // Check if FixedBridge is a child of this GameObject
         if (fixedBridge != null && fixedBridge.transform.parent == transform)
@@ -33,6 +36,9 @@ public class FixableBridge : MonoBehaviour
         if (fixedBridge != null && fixedBridge.transform.parent == transform)
         {
             fixedBridge.SetActive(true);
+            textPanel.DisplayText("Huh, my axe fell in the water.");
+            player.GetComponent<Player>().SetAxe(false);
+
         }
         else
         {
