@@ -2129,8 +2129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!4 &70156349 stripped
@@ -3869,8 +3867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &126012767
@@ -5935,8 +5931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &197142864
@@ -6681,8 +6675,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 60
-  treeShakeAmount: 0.02
   shakeTree: 0
   hitsToDie: 5
 --- !u!4 &226188480 stripped
@@ -9972,8 +9964,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!114 &344476682
@@ -9989,8 +9979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 1
-  treeSpeed: 0
-  treeShakeAmount: 0
   shakeTree: 0
   hitsToDie: 0
 --- !u!1 &346014758
@@ -10041,8 +10029,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &346014761
@@ -10377,8 +10363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &349444002
@@ -17869,8 +17853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1 &598663965 stripped
@@ -23698,8 +23680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &754021984
@@ -30828,8 +30808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1003035626
@@ -30908,7 +30886,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1003035631}
   m_SourcePrefab: {fileID: 100100000, guid: 2aa99bc1947a948b09b5a0e71495c100, type: 3}
 --- !u!4 &1003035627 stripped
 Transform:
@@ -30922,6 +30904,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1003035626}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1003035631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003035628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13554373, y: 0.31475395, z: 0.032267366}
+  m_Center: {x: 0.043144133, y: 0.23232079, z: 0.0002541184}
 --- !u!1001 &1003212191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43897,6 +43900,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1366969595}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1445007130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6134530624293237107, guid: b40ebb8c661404cb9960fc5f83633022,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955582336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1445007134
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445007130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.16326939
+  m_Height: 0.4838787
+  m_Direction: 1
+  m_Center: {x: -0.000000014944618, y: 0.14, z: -0.00000019557028}
 --- !u!1001 &1447810102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57547,8 +57579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1844196909
@@ -60018,8 +60048,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1930323607
@@ -60818,7 +60846,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 796940482}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6134530624293237107, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1445007134}
   m_SourcePrefab: {fileID: 100100000, guid: b40ebb8c661404cb9960fc5f83633022, type: 3}
 --- !u!4 &1955582337 stripped
 Transform:
