@@ -6681,8 +6681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
-  treeSpeed: 5
-  treeShakeAmount: 0.1
+  treeSpeed: 60
+  treeShakeAmount: 0.02
   shakeTree: 0
   hitsToDie: 5
 --- !u!4 &226188480 stripped

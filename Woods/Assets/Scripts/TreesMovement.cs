@@ -11,8 +11,8 @@ public class Tree : MonoBehaviour, IInteractable
     private GameObject player;
 
     Vector3 treePosition;
-    public float treeSpeed;
-    public float treeShakeAmount;
+    private float treeSpeed = 60;
+    private float treeShakeAmount = 0.02f;
     public bool shakeTree;
     public int hitsToDie; // How many hits can the tree survive
 
