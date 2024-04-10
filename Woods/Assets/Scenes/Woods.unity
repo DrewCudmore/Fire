@@ -22886,6 +22886,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7435274499087058109, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7435274499122721106, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Range
@@ -22895,6 +22900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435274499122721107, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
