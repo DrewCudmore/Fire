@@ -106,13 +106,13 @@ public class GameManager : MonoBehaviour
 
         // Show death text
         deathText.gameObject.SetActive(true);
-        deathText.text = "You died!\nCause of death: " + deathReason + "\n\nPress Space to Respawn";
+        deathText.text = "You died!\nCause of death: " + deathReason + "\n\nPress Enter to Respawn";
         waitForInput = true;
 
         // Wait for spacebar input
         while (waitForInput)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 waitForInput = false;
             }

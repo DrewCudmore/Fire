@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private float interactionRange = 7f;
     private GameManager gameManager;
     private InventoryManager inventoryManager;
+    public GameObject Axe;
 
 
     private void Start()
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
     {
         HandleInteractions();
         HandleRestartInput();
+    }
+
+    public void SetAxe(bool active)
+    {
+        Axe.SetActive(active);
     }
 
     private void HandleInteractions()
