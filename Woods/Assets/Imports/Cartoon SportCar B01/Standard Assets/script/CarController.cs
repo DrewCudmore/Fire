@@ -18,6 +18,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
     public class CarController : MonoBehaviour
     {
+        [SerializeField] private float m_InitialSpeed = 100f;
+
+
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
         [SerializeField] private GameObject[] m_WheelMeshes = new GameObject[4];
@@ -27,15 +30,15 @@ namespace UnityStandardAssets.Vehicles.Car
         [Range(0, 1)] [SerializeField] private float m_SteerHelper; // 0 is raw physics , 1 the car will grip in the direction it is facing
         [Range(0, 1)] [SerializeField] private float m_TractionControl; // 0 is no traction control, 1 is full interference
         [SerializeField] private float m_FullTorqueOverAllWheels;
-        [SerializeField] private float m_ReverseTorque;
-        [SerializeField] private float m_MaxHandbrakeTorque;
+        //[SerializeField] private float m_ReverseTorque;
+        //[SerializeField] private float m_MaxHandbrakeTorque;
         [SerializeField] private float m_Downforce = 100f;
         [SerializeField] private SpeedType m_SpeedType;
         [SerializeField] private float m_Topspeed = 200;
         [SerializeField] private static int NoOfGears = 5;
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
-        [SerializeField] private float m_BrakeTorque;
+        //[SerializeField] private float m_BrakeTorque;
 
         private Quaternion[] m_WheelMeshLocalRotations;
         private Vector3 m_Prevpos, m_Pos;
@@ -48,7 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private const float k_ReversingThreshold = 0.01f;
 
         public bool Skidding { get; private set; }
-        public float BrakeInput { get; private set; }
+        //public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
         public float MaxSpeed{get { return m_Topspeed; }}
@@ -65,9 +68,11 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
-            m_MaxHandbrakeTorque = float.MaxValue;
+            //m_MaxHandbrakeTorque = float.MaxValue;
 
             m_Rigidbody = GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = transform.forward * m_InitialSpeed;
+
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
         }
 
@@ -140,8 +145,8 @@ namespace UnityStandardAssets.Vehicles.Car
             //clamp input values
             steering = Mathf.Clamp(steering, -1, 1);
             AccelInput = accel = Mathf.Clamp(accel, 0, 1);
-            BrakeInput = footbrake = -1*Mathf.Clamp(footbrake, -1, 0);
-            handbrake = Mathf.Clamp(handbrake, 0, 1);
+            //BrakeInput = footbrake = -1*Mathf.Clamp(footbrake, -1, 0);
+            //handbrake = Mathf.Clamp(handbrake, 0, 1);
 
             //Set the steer on the front wheels.
             //Assuming that wheels 0 and 1 are the front wheels.
@@ -155,12 +160,12 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //Set the handbrake.
             //Assuming that wheels 2 and 3 are the rear wheels.
-            if (handbrake > 0f)
-            {
-                var hbTorque = handbrake*m_MaxHandbrakeTorque;
-                m_WheelColliders[2].brakeTorque = hbTorque;
-                m_WheelColliders[3].brakeTorque = hbTorque;
-            }
+            //if (handbrake > 0f)
+            //{
+            //    var hbTorque = handbrake*m_MaxHandbrakeTorque;
+            //    m_WheelColliders[2].brakeTorque = hbTorque;
+            //    m_WheelColliders[3].brakeTorque = hbTorque;
+            //}
 
 
             CalculateRevs();
@@ -219,18 +224,18 @@ namespace UnityStandardAssets.Vehicles.Car
 
             }
 
-            for (int i = 0; i < 4; i++)
-            {
-                if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
-                {
-                    m_WheelColliders[i].brakeTorque = m_BrakeTorque*footbrake;
-                }
-                else if (footbrake > 0)
-                {
-                    m_WheelColliders[i].brakeTorque = 0f;
-                    m_WheelColliders[i].motorTorque = -m_ReverseTorque*footbrake;
-                }
-            }
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
+            //    {
+            //        m_WheelColliders[i].brakeTorque = m_BrakeTorque*footbrake;
+            //    }
+            //    else if (footbrake > 0)
+            //    {
+                    //m_WheelColliders[i].brakeTorque = 0f;
+                    //m_WheelColliders[i].motorTorque = -m_ReverseTorque*footbrake;
+                //}
+            //}
         }
 
 

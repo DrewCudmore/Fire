@@ -2129,6 +2129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!4 &70156349 stripped
@@ -3867,6 +3868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &126012767
@@ -5931,6 +5933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &197142864
@@ -6662,21 +6665,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
---- !u!114 &220499114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220499106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a98da14c99f450d8d9db85202a2d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer_cooldown: 0.2
-  shakeTree: 0
-  hitsToDie: 5
 --- !u!4 &226188480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
@@ -9964,6 +9952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!114 &344476682
@@ -9979,6 +9968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 1
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 0
 --- !u!1 &346014758
@@ -9994,6 +9984,7 @@ GameObject:
   - component: {fileID: 346014762}
   - component: {fileID: 346014761}
   - component: {fileID: 346014760}
+  - component: {fileID: 346014764}
   m_Layer: 0
   m_Name: default (4)
   m_TagString: ChoppableTree
@@ -10029,6 +10020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 346014764}
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &346014761
@@ -10103,6 +10095,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346014758}
   m_Mesh: {fileID: -2432090755550338912, guid: 22cf238ce032271499d9ea79102aaffb, type: 3}
+--- !u!82 &346014764
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346014758}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1a133602f1691430fbc0f899d61b50b3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &346435794
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,6 +10451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &349444002
@@ -17853,6 +17942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1 &598663965 stripped
@@ -23680,6 +23770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!64 &754021984
@@ -30808,6 +30899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1003035626
@@ -42864,12 +42956,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
         type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 220499110}
-    - targetCorrespondingSourceObject: {fileID: 6511559052832994489, guid: 8a4bc7e46519bd848909f56eb590b5e1,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 220499114}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4bc7e46519bd848909f56eb590b5e1, type: 3}
 --- !u!1001 &1410211782
 PrefabInstance:
@@ -57579,6 +57667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1844196909
@@ -60048,6 +60137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer_cooldown: 0.2
+  choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
 --- !u!1001 &1930323607
@@ -64004,6 +64094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 0}
+  textIntensity: 0
   deincrementIntensity: 0.0001
   deincrementRange: 0
   resetLantern: 0
