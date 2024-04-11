@@ -19,12 +19,17 @@ public class SceneSwitcher : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void SwitchScene()
+    {
+        PlayAudio();
+        SceneManager.LoadScene(sceneToSwitchTo);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Car")
         {
-            PlayAudio();
-            SceneManager.LoadScene(sceneToSwitchTo);
+            SwitchScene();
         }
     }
 
