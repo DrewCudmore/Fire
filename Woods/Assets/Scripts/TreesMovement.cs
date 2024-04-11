@@ -9,6 +9,7 @@ public class Tree : MonoBehaviour, IInteractable
     [SerializeField] private float timer_cooldown = 1f;
     private bool timer_locked_out = false;
     private GameObject player;
+    public AudioSource choppingAudio;
 
     Vector3 treePosition;
     private float treeSpeed = 60;
@@ -20,6 +21,14 @@ public class Tree : MonoBehaviour, IInteractable
     {
         player = GameObject.FindGameObjectWithTag("Player");
         treePosition = transform.position;
+
+        choppingAudio = GetComponent<AudioSource>();
+
+        // Check if AudioSource component exists
+        if (choppingAudio == null)
+        {
+            Debug.LogError("No AudioSource component found!");
+        }
     }
 
     // Update is called once per frame
@@ -77,9 +86,19 @@ public class Tree : MonoBehaviour, IInteractable
 
 
             shakeTree = true;
+            PlayChoppingWoodSound();
             ShakeTreeTime();
         }
 
         return item;
     }
+
+    private void PlayChoppingWoodSound()
+    {
+        if (choppingAudio != null && !choppingAudio.isPlaying)
+        {
+            choppingAudio.Play();
+        }
+    }
+
 }
