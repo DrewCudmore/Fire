@@ -6,6 +6,7 @@ public class Bear : MonoBehaviour
 {
     public Rigidbody rb;
     Animator ani;
+    private GameManager gameManager;
 
     public BoxCollider startWalking;
     public BoxCollider attackPlayer;
@@ -15,6 +16,8 @@ public class Bear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.Instance;
+
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
@@ -53,6 +56,7 @@ public class Bear : MonoBehaviour
 
                 case 2:
                     ani.SetBool("Attack", true);
+                    gameManager.KillPlayer("BEAR ATTACK AAAAAAAAAAHHHHH");
                     break;
 
                 default:
