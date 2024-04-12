@@ -122,15 +122,20 @@ public class GameManager : MonoBehaviour
         fadePanel.gameObject.SetActive(false);
     }
 
-    private IEnumerator FadeOut(float duration)
+    public void FadeOutScreen(float duration)
+    {
+        StartCoroutine(FadeOut(duration));
+    }
+
+    public IEnumerator FadeOut(float duration)
     {
         yield return Fade(0f, 1f, duration);
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
-        fadePanel.gameObject.SetActive(true);
 
+        fadePanel.gameObject.SetActive(true);
         float timer = 0f;
         Color color = Color.black;
 
@@ -145,8 +150,6 @@ public class GameManager : MonoBehaviour
 
         color.a = endAlpha;
         fadePanel.color = color;
-
-        
     }
 
 }
