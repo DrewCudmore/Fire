@@ -6,6 +6,8 @@ public class SceneSwitcher : MonoBehaviour
     public string sceneToSwitchTo;
     public AudioSource audioSource;
 
+    private GameManager gameManager;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -17,19 +19,35 @@ public class SceneSwitcher : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        gameManager = GameManager.Instance;
     }
 
-    public void SwitchScene()
+    public void SwitchSceneWithFadeOut(float fadeDuration)
     {
-        PlayAudio();
+        gameManager.FadeOut(fadeDuration);
+        Invoke("SwitchScene", fadeDuration); // Invoke SwitchScene after the fadeDuration
+    }
+
+    private void SwitchScene()
+    {
         SceneManager.LoadScene(sceneToSwitchTo);
+    }
+
+    private void OnDestroy()
+    {
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Car")
         {
-            SwitchScene();
+            PlayAudio();
+            SceneManager.LoadScene(sceneToSwitchTo);
         }
     }
 

@@ -6,13 +6,16 @@ using UnityEngine;
 public class Car : MonoBehaviour, IInteractable
 {
     public bool CanInteract { get; set; } = true;
+    private GameManager gameManager;
 
     private SceneSwitcher sceneSwitcher;
 
 
     public Item Interact()
     {
-        sceneSwitcher?.SwitchScene();
+        gameManager.FadeOutScreen(gameManager.fadeDuration);
+        sceneSwitcher.sceneToSwitchTo = "EndDriving";
+        sceneSwitcher.SwitchSceneWithFadeOut(2);
 
         return Item.None;
     }
@@ -21,6 +24,7 @@ public class Car : MonoBehaviour, IInteractable
     void Start()
     {
         sceneSwitcher = this.GetComponent<SceneSwitcher>();
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame
