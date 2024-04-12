@@ -55,7 +55,7 @@ public class Campfire : MonoBehaviour, IInteractable, IDialogue
         if (isLit)
         {
             dialogue = "Lantern Flame Restored";
-            player.GetComponentInChildren<Lantern>().ResetLantern();
+            player.GetComponentInChildren<Fire>().ResetLantern();
             return;
         }
         else
