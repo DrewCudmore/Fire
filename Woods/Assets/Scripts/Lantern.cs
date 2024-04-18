@@ -21,7 +21,7 @@ public class Lantern : MonoBehaviour
         {
             regularLight.SetActive(false);
             redLight.SetActive(false);
-            greenLight.SetActive(true);
+            greenLight.SetActive(false);
             blueLight.SetActive(true);
             changeColorBlue = false;
         }
@@ -29,7 +29,7 @@ public class Lantern : MonoBehaviour
         {
             blueLight.SetActive(false);
             redLight.SetActive(false);
-            greenLight.SetActive(true);
+            greenLight.SetActive(false);
             regularLight.SetActive(true);
             changeColorRegular = false;
         }
@@ -38,7 +38,7 @@ public class Lantern : MonoBehaviour
         {
             regularLight.SetActive(false);
             blueLight.SetActive(false);
-            greenLight.SetActive(true);
+            greenLight.SetActive(false);
             redLight.SetActive(true);
             changeColorRed = false;
         }
