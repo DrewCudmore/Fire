@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bear : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class Bear : MonoBehaviour
     public BoxCollider attackPlayer;
 
     public int triggerCounter = 0;
+    public bool targettingPlayer = false;
+
+    public Transform target;
+    NavMeshAgent agent;
+    private Vector3 home;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +29,9 @@ public class Bear : MonoBehaviour
 
         startWalking = GetComponent<BoxCollider>();
         attackPlayer = GetComponent<BoxCollider>();
+
+        agent = GetComponent<NavMeshAgent>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         ani.SetBool("Walking", false);
         ani.SetBool("Running", false);
@@ -38,7 +47,10 @@ public class Bear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!targettingPlayer)
+        {
+            agent.Move(home);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,7 +58,7 @@ public class Bear : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggerCounter++;
-            //Debug.Log("current trigger value on enter " + triggerCounter);
+            Debug.Log("current trigger value on enter " + triggerCounter);
             switch (triggerCounter)
             {
                 case 1:
@@ -55,8 +67,14 @@ public class Bear : MonoBehaviour
                 break;
 
                 case 2:
+                    agent.SetDestination(target.position);
+                    targettingPlayer = true;
+                break;
+
+                case 3:
                     ani.SetBool("Attack", true);
                     gameManager.KillPlayer("BEAR ATTACK AAAAAAAAAAHHHHH");
+
                     break;
 
                 default:
@@ -74,10 +92,17 @@ public class Bear : MonoBehaviour
                 case 1:
                     ani.SetBool("Walking", false);
                     ani.SetBool("Sleeping", true);
+                    agent.ResetPath();
                     break;
 
                 case 2:
+                    //agent.Move(home);
+                    targettingPlayer = false;
+                    break;
+
+                case 3:
                     ani.SetBool("Attack", false);
+                    //triggerCounter--;
                     break;
 
                 default:

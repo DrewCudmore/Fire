@@ -5070,6 +5070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 6398824659459859394}
+  Axe: {fileID: 0}
 --- !u!114 &3287424507931335886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10393,6 +10394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 8292809197282214634}
+  textIntensity: 0
   deincrementIntensity: 0.6
   deincrementRange: 0.7
   resetLantern: 0
