@@ -376,17 +376,17 @@ PrefabInstance:
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.59
+      value: 74.21275
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.3839045
+      value: 17.304548
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 103.37
+      value: 65.62094
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
@@ -432,6 +432,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7497121113811543269}
   m_SourcePrefab: {fileID: 100100000, guid: 2071281887c6f514388923e0ee4bae72, type: 3}
+--- !u!1 &4409434540877061531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279070500727458530, guid: 2071281887c6f514388923e0ee4bae72,
+    type: 3}
+  m_PrefabInstance: {fileID: 2490938996318672761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8458281039543336063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6336650555541744390, guid: 2071281887c6f514388923e0ee4bae72,
@@ -454,4 +460,4 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
-  turnOnLight: {fileID: 0}
+  turnOnLight: {fileID: 4409434540877061531}

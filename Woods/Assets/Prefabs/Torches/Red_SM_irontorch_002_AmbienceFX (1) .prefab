@@ -446,17 +446,17 @@ PrefabInstance:
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.5
+      value: 76.12276
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.46
+      value: 17.228453
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 103.71
+      value: 65.96093
       objectReference: {fileID: 0}
     - target: {fileID: 6682108984950305212, guid: 2071281887c6f514388923e0ee4bae72,
         type: 3}
@@ -524,4 +524,10 @@ MonoBehaviour:
   colorRed: 1
   colorGreen: 0
   canTurnOn: 0
-  turnOnLight: {fileID: 0}
+  turnOnLight: {fileID: 5491209011793328706}
+--- !u!1 &5491209011793328706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279070500727458530, guid: 2071281887c6f514388923e0ee4bae72,
+    type: 3}
+  m_PrefabInstance: {fileID: 6022529909395812512}
+  m_PrefabAsset: {fileID: 0}

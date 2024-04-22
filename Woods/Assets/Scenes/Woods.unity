@@ -75521,6 +75521,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1581040570}
     m_Modifications:
+    - target: {fileID: 450381382830425105, guid: 226156f68e51243cfb5f342f508ae09f,
+        type: 3}
+      propertyPath: m_Name
+      value: Fire_Green_PSys
+      objectReference: {fileID: 0}
     - target: {fileID: 1607405871468903367, guid: 226156f68e51243cfb5f342f508ae09f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75576,6 +75581,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green_SM_irontorch_002_AmbienceFX (1)  (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5804112358283657554, guid: 226156f68e51243cfb5f342f508ae09f,
+        type: 3}
+      propertyPath: turnOnLight
+      value: 
+      objectReference: {fileID: 5661288792110691605}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75584,6 +75594,12 @@ PrefabInstance:
 --- !u!4 &5661288792110691604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1607405871468903367, guid: 226156f68e51243cfb5f342f508ae09f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5661288792110691603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5661288792110691605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 450381382830425105, guid: 226156f68e51243cfb5f342f508ae09f,
     type: 3}
   m_PrefabInstance: {fileID: 5661288792110691603}
   m_PrefabAsset: {fileID: 0}
