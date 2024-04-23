@@ -4910,7 +4910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1716898209562651928
 Transform:
   m_ObjectHideFlags: 0
@@ -10510,17 +10510,17 @@ PrefabInstance:
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.ctime2
-      value: 65342
+      value: 65150
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b
-      value: 0.16509432
+      value: 0.16470587
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0.47452
+      value: 0.97734976
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -10530,32 +10530,32 @@ PrefabInstance:
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0.16300285
+      value: 0.16470587
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.28403732
+      value: 0.93333334
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0.9339623
+      value: 0.44307747
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key2.b
-      value: 0
+      value: 0.05490196
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key2.g
-      value: 0.048927724
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210982, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key2.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2859456735069951257, guid: b5c4d598badfa5645855c4c8be16818f, type: 3}
@@ -10656,6 +10656,7 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
+  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!1001 &2398793992104821613
 PrefabInstance:
@@ -10956,6 +10957,7 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
+  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!4 &6160098216484553726 stripped
 Transform:
@@ -11027,9 +11029,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern1
       objectReference: {fileID: 0}
+    - target: {fileID: 1882602143141976, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_TagString
+      value: LanternColor
+      objectReference: {fileID: 0}
     - target: {fileID: 4460530275303074, guid: 56c82061e6c4de742a208837848be55a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.92
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 4460530275303074, guid: 56c82061e6c4de742a208837848be55a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11186,6 +11192,10 @@ MonoBehaviour:
   blueLight: {fileID: 265091632995322089}
   redLight: {fileID: 6160098216484553725}
   greenLight: {fileID: 8769871398574716639}
+  colorBlue: 0
+  colorRed: 0
+  colorGreen: 0
+  colorReg: 0
   changeColorBlue: 0
   changeColorRed: 0
   changeColorGreen: 0
@@ -11616,6 +11626,7 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
+  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!4 &265091632995322090 stripped
 Transform:
