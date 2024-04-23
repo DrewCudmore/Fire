@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private TextPanel textPanel;
 
-    public float fadeDuration = 1f;
+    public float fadeDuration = 4f;
     public Image fadePanel;
     public TextMeshProUGUI deathText;
 
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
         textPanel = FindObjectOfType<TextPanel>();
         textPanel.DisplayText("Use WASD and E to interact");
+
+        FadeInScreen(fadeDuration);
     }
 
     private void Awake()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     public void SetCheckpoint(Transform checkpointPosition)
@@ -52,25 +55,22 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-
-        if (lastCheckpoint != null)
-        {
-            if (player != null)
-            {
-                player.transform.position = lastCheckpoint.position;
-                player.transform.rotation = lastCheckpoint.rotation;
-            }
-            else
-            {
-                Debug.LogWarning("Player object not found!");
-            }
-        }
-        else
+        if (lastCheckpoint == null)
         {
             Debug.LogWarning("No checkpoint set!");
+            return;
         }
 
+        if (player == null)
+        {
+            Debug.LogWarning("Player object not found!");
+            return;
+        }
+
+        player.transform.position = lastCheckpoint.position;
+        player.transform.rotation = lastCheckpoint.rotation;
     }
+
 
     public void LoadScene(string sceneName)
     {
@@ -79,37 +79,20 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer(string deathReason)
     {
-        //Debug.Log(lantern.myLight.intensity);
-
         fadePanel.gameObject.SetActive(true);
-
-        if (playerMovement != null)
-        {
-            playerMovement.disableMovement();
-        }
-
+        playerMovement?.disableMovement();
         StartCoroutine(FadeToDeathScreen(deathReason));
     }
 
-    IEnumerator FadeToDeathScreen(string deathReason)
+    private IEnumerator FadeToDeathScreen(string deathReason)
     {
-        // Fade out
-        float timer = 0f;
-        while (timer < fadeDuration)
-        {
-            float alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
-            fadePanel.color = new Color(0f, 0f, 0f, alpha);
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        fadePanel.color = Color.black;
+        yield return FadeOut(fadeDuration);
 
         // Show death text
         deathText.gameObject.SetActive(true);
-        deathText.text = "You died!\nCause of death: " + deathReason + "\n\nPress Enter to Respawn";
+        deathText.text = $"You died!\nCause of death: {deathReason}\n\nPress Enter to Respawn";
         waitForInput = true;
 
-        // Wait for spacebar input
         while (waitForInput)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -119,28 +102,54 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        // Respawn the player
         RespawnPlayer();
+        playerMovement?.enableMovement();
 
-        // Fade in
-        timer = 0f;
-        while (timer < fadeDuration)
+        yield return FadeIn(fadeDuration);
+
+        // Disable deathtext after fading back
+        deathText.gameObject.SetActive(false);
+    }
+
+    public void FadeInScreen(float duration)
+    {
+        StartCoroutine(FadeIn(duration));
+    }
+
+    private IEnumerator FadeIn(float duration)
+    {
+        yield return Fade(1f, 0f, duration);
+        fadePanel.gameObject.SetActive(false);
+    }
+
+    public void FadeOutScreen(float duration)
+    {
+        StartCoroutine(FadeOut(duration));
+    }
+
+    public IEnumerator FadeOut(float duration)
+    {
+        yield return Fade(0f, 1f, duration);
+    }
+
+    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    {
+
+        fadePanel.gameObject.SetActive(true);
+        float timer = 0f;
+        Color color = Color.black;
+
+        while (timer < duration)
         {
-            float alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-            fadePanel.color = new Color(0f, 0f, 0f, alpha);
+            float alpha = Mathf.Lerp(startAlpha, endAlpha, timer / duration);
+            color.a = alpha;
+            fadePanel.color = color;
             timer += Time.deltaTime;
             yield return null;
         }
-        fadePanel.color = Color.clear;
 
-        // Disable canvas elements after fading back
-        fadePanel.gameObject.SetActive(false);
-        deathText.gameObject.SetActive(false);
-
-        // Renable movement
-        if (playerMovement != null)
-        {
-            playerMovement.enableMovement();
-        }
+        color.a = endAlpha;
+        fadePanel.color = color;
     }
+
 }

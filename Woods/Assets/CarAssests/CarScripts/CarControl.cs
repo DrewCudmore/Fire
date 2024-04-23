@@ -6,11 +6,12 @@ public class CarControl : MonoBehaviour
     //https://docs.unity3d.com/Manual/WheelColliderTutorial.html
 
     public float motorTorque = 2000;
-    public float brakeTorque = 2000;
+    //public float brakeTorque = 2000;
     public float maxSpeed = 20;
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
+    public float initialSpeed = 10f;
 
     WheelControl[] wheels;
     Rigidbody rigidBody;
@@ -22,6 +23,7 @@ public class CarControl : MonoBehaviour
 
         // Adjust center of mass vertically, to help prevent the car from rolling
         rigidBody.centerOfMass += Vector3.up * centreOfGravityOffset;
+        rigidBody.velocity = transform.forward * initialSpeed;
 
         // Find all child GameObjects that have the WheelControl script attached
         wheels = GetComponentsInChildren<WheelControl>();
@@ -76,8 +78,8 @@ public class CarControl : MonoBehaviour
             {
                 // If the user is trying to go in the opposite direction
                 // apply brakes to all wheels
-                wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
-                wheel.WheelCollider.motorTorque = 0;
+                //wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
+                //wheel.WheelCollider.motorTorque = 0;
             }
         }
     }
