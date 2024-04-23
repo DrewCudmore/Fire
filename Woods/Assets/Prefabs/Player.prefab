@@ -10656,7 +10656,6 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
-  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!1001 &2398793992104821613
 PrefabInstance:
@@ -10957,7 +10956,6 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
-  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!4 &6160098216484553726 stripped
 Transform:
@@ -11195,7 +11193,7 @@ MonoBehaviour:
   colorBlue: 0
   colorRed: 0
   colorGreen: 0
-  colorReg: 0
+  colorReg: 1
   changeColorBlue: 0
   changeColorRed: 0
   changeColorGreen: 0
@@ -11626,7 +11624,6 @@ MonoBehaviour:
   colorRed: 0
   colorGreen: 0
   canTurnOn: 0
-  specialTorch: 0
   turnOnLight: {fileID: 0}
 --- !u!4 &265091632995322090 stripped
 Transform:
