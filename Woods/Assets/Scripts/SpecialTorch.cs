@@ -24,10 +24,10 @@ public class SpecialTorch : MonoBehaviour, IInteractable
     public Item Interact()
     {
         Torch();
-        Debug.Log("hi");
+        //Debug.Log("hi");
         return Item.None;
     }
-    //.canInteract = falsse
+
     void Torch()
     {
         if (lanternColor.GetComponent<Lantern>().colorBlue)
@@ -36,10 +36,10 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             greenLight.SetActive(false);
             blueLight.SetActive(true);
             regLight.SetActive(false);
-            if (blue)
-            {
-                CanInteract = false;
-            }
+            //if (blue)
+            //{
+            //    CanInteract = false;
+            //}
 
         }
         if (lanternColor.GetComponent<Lantern>().colorRed)
@@ -48,10 +48,10 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             redLight.SetActive(true);
             greenLight.SetActive(false);
             regLight.SetActive(false);
-            if (red)
-            {
-                CanInteract = false;
-            }
+            //if (red)
+            //{
+            //    CanInteract = false;
+            //}
         }
         if (lanternColor.GetComponent<Lantern>().colorGreen)
         {
@@ -59,10 +59,10 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             redLight.SetActive(false);
             greenLight.SetActive(true);
             regLight.SetActive(false);
-            if (green)
-            {
-                CanInteract = false;
-            }
+            //if (green)
+            //{
+            //    CanInteract = false;
+            //}
         }
         if (lanternColor.GetComponent<Lantern>().colorReg)
         {
