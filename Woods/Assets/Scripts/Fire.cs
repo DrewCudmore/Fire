@@ -72,6 +72,8 @@ public class Fire : MonoBehaviour
 
     public void ResetLantern()
     {
+        GameObject.FindGameObjectWithTag("LanternColor").GetComponent<Lantern>().changeColorRegular = true;
+        GameObject.FindGameObjectWithTag("LanternColor").GetComponent<Lantern>().ChangeColor();
         myLight.intensity = originalIntensity;
         myLight.range = originalRange;
         myLight.color = originalColor;
