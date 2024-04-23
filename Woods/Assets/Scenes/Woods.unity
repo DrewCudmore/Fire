@@ -8376,6 +8376,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1274953742}
     m_Modifications:
+    - target: {fileID: 5188365636986736902, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 4ad04bf4f387c4950adf97e3ad0efa06,
+        type: 2}
     - target: {fileID: 5220074609617954273, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18622,21 +18628,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1274953742}
     m_Modifications:
-    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.556
-      objectReference: {fileID: 0}
-    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.209
-      objectReference: {fileID: 0}
-    - target: {fileID: 670925047380210677, guid: 3acd7266fee14439184be0eb045c3e95,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.341
-      objectReference: {fileID: 0}
     - target: {fileID: 5220074609617954273, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18687,24 +18678,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7435274499122721106, guid: 3acd7266fee14439184be0eb045c3e95,
-        type: 3}
-      propertyPath: m_Range
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7435274499122721106, guid: 3acd7266fee14439184be0eb045c3e95,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7670544268576839143, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_Name
       value: Camp fire (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2365053292879925330, guid: 3acd7266fee14439184be0eb045c3e95, type: 3}
-    - {fileID: 7926347057331254482, guid: 3acd7266fee14439184be0eb045c3e95, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -26022,6 +26001,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.341
       objectReference: {fileID: 0}
+    - target: {fileID: 5188365636986736902, guid: 3acd7266fee14439184be0eb045c3e95,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 4ad04bf4f387c4950adf97e3ad0efa06,
+        type: 2}
     - target: {fileID: 5220074609617954273, guid: 3acd7266fee14439184be0eb045c3e95,
         type: 3}
       propertyPath: m_LocalPosition.x
