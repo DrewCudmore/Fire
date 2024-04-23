@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     public string sceneToSwitchTo;
+    public bool fadeOut = false;
+    public float fadeDuration = 4f;
     public AudioSource audioSource;
 
     private GameManager gameManager;
@@ -23,9 +25,9 @@ public class SceneSwitcher : MonoBehaviour
         gameManager = GameManager.Instance;
     }
 
-    public void SwitchSceneWithFadeOut(float fadeDuration)
+    public void SwitchSceneWithFadeOut()
     {
-        gameManager.FadeOut(fadeDuration);
+        gameManager.FadeOutScreen(fadeDuration);
         Invoke("SwitchScene", fadeDuration); // Invoke SwitchScene after the fadeDuration
     }
 
@@ -47,7 +49,15 @@ public class SceneSwitcher : MonoBehaviour
         if (other.gameObject.name == "Car")
         {
             PlayAudio();
-            SceneManager.LoadScene(sceneToSwitchTo);
+            if (fadeOut)
+            {
+                SwitchSceneWithFadeOut();
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneToSwitchTo);
+            }
+
         }
     }
 

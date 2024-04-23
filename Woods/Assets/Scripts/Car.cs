@@ -15,7 +15,7 @@ public class Car : MonoBehaviour, IInteractable
     {
         gameManager.FadeOutScreen(gameManager.fadeDuration);
         sceneSwitcher.sceneToSwitchTo = "EndDriving";
-        sceneSwitcher.SwitchSceneWithFadeOut(2);
+        sceneSwitcher.SwitchSceneWithFadeOut();
 
         return Item.None;
     }

@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
+        playerMovement = player?.GetComponent<PlayerMovement>();
         textPanel = FindObjectOfType<TextPanel>();
-        textPanel.DisplayText("Use WASD and E to interact");
+        GivePlayerTutorial();
 
         FadeInScreen(fadeDuration);
     }
@@ -41,6 +41,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void GivePlayerTutorial()
+    {
+        if (player)
+        {
+            textPanel?.DisplayText("Use WASD and E to interact");
+        }
     }
 
     public void SetCheckpoint(Transform checkpointPosition)
