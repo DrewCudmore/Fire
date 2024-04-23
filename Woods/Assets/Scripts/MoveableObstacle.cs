@@ -5,9 +5,9 @@ using UnityEngine;
 public class MoveableObstacle : MonoBehaviour
 {
 
-    public GameObject blueTorch;
-    public GameObject redTorch;
-    public GameObject greenTorch;
+    public SpecialTorch blueTorch;
+    public SpecialTorch redTorch;
+    public SpecialTorch greenTorch;
 
     public float moveSpeed = 1f;
 
@@ -21,15 +21,15 @@ public class MoveableObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CheckLit())
+        if (CheckColors())
         {
             MoveAway();
         }
     }
 
-    private bool CheckLit()
+    private bool CheckColors()
     {
-        return blueTorch.GetComponent<IInteractable>().CanInteract && redTorch.GetComponent<IInteractable>().CanInteract && greenTorch.GetComponent<IInteractable>().CanInteract;
+        return blueTorch.isCorrectColor && redTorch.isCorrectColor && greenTorch.isCorrectColor;
     }
 
     private void MoveAway()

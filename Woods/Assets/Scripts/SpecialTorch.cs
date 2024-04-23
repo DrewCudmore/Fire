@@ -16,6 +16,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
     public bool red;
     public bool green;
 
+    public bool isCorrectColor = false;
+
     void Start()
     {
         lanternColor = GameObject.FindGameObjectWithTag("LanternColor");
@@ -24,7 +26,6 @@ public class SpecialTorch : MonoBehaviour, IInteractable
     public Item Interact()
     {
         Torch();
-        //Debug.Log("hi");
         return Item.None;
     }
 
@@ -36,11 +37,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             greenLight.SetActive(false);
             blueLight.SetActive(true);
             regLight.SetActive(false);
-            //if (blue)
-            //{
-            //    CanInteract = false;
-            //}
 
+            isCorrectColor = blue;
         }
         if (lanternColor.GetComponent<Lantern>().colorRed)
         {
@@ -48,10 +46,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             redLight.SetActive(true);
             greenLight.SetActive(false);
             regLight.SetActive(false);
-            //if (red)
-            //{
-            //    CanInteract = false;
-            //}
+
+            isCorrectColor = red;
         }
         if (lanternColor.GetComponent<Lantern>().colorGreen)
         {
@@ -59,10 +55,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             redLight.SetActive(false);
             greenLight.SetActive(true);
             regLight.SetActive(false);
-            //if (green)
-            //{
-            //    CanInteract = false;
-            //}
+
+            isCorrectColor = green;
         }
         if (lanternColor.GetComponent<Lantern>().colorReg)
         {
@@ -70,6 +64,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
             redLight.SetActive(false);
             greenLight.SetActive(false);
             regLight.SetActive(true);
+
+            isCorrectColor = false;
         }
     }
 }
