@@ -13725,17 +13725,17 @@ PrefabInstance:
     - target: {fileID: 2239116663088207849, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
       propertyPath: red
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2239116663088207849, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
       propertyPath: green
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2292771511061179191, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
       propertyPath: m_Name
-      value: ExitTorchGreen
+      value: ExitTorchRed
       objectReference: {fileID: 0}
     - target: {fileID: 7629006300946034041, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
@@ -69545,10 +69545,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.242
       objectReference: {fileID: 0}
+    - target: {fileID: 2239116663088207849, guid: 6c9195a9685154bdbbb7669e31ad0913,
+        type: 3}
+      propertyPath: red
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239116663088207849, guid: 6c9195a9685154bdbbb7669e31ad0913,
+        type: 3}
+      propertyPath: green
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2292771511061179191, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
       propertyPath: m_Name
-      value: ExitTorchRed
+      value: ExitTorchGreen
       objectReference: {fileID: 0}
     - target: {fileID: 7629006300946034041, guid: 6c9195a9685154bdbbb7669e31ad0913,
         type: 3}
