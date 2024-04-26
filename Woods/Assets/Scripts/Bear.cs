@@ -13,7 +13,7 @@ public class Bear : MonoBehaviour
     public BoxCollider attackPlayer;
 
     public int triggerCounter = 0;
-    public bool targettingPlayer = false;
+    //public bool targettingPlayer = false;
 
     public Transform target;
     NavMeshAgent agent;
@@ -24,7 +24,7 @@ public class Bear : MonoBehaviour
     {
         gameManager = GameManager.Instance;
 
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
         startWalking = GetComponent<BoxCollider>();
@@ -47,10 +47,10 @@ public class Bear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!targettingPlayer)
-        {
-            agent.Move(home);
-        }
+        //if (!targettingPlayer)
+        //{
+        //    agent.Move(home);
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,7 +68,7 @@ public class Bear : MonoBehaviour
 
                 case 2:
                     agent.SetDestination(target.position);
-                    targettingPlayer = true;
+                    //targettingPlayer = true;
                 break;
 
                 case 3:
@@ -96,8 +96,12 @@ public class Bear : MonoBehaviour
                     break;
 
                 case 2:
-                    //agent.Move(home);
-                    targettingPlayer = false;
+                    agent.Move(home);
+                    //if (agent.hasPath)
+                    //{
+                    //    agent.
+                    //}
+                    //targettingPlayer = false;
                     break;
 
                 case 3:
