@@ -11,6 +11,5 @@ public enum Item
 {
     None,          
     Axe,          
-    Wood,
-    Berries,
+    Wood,          
 }

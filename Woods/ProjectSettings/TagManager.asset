@@ -9,7 +9,6 @@ TagManager:
   - ChoppableTree
   - LanternColor
   - Info Menu
-  - Barrel
   layers:
   - Default
   - TransparentFX

@@ -37,11 +37,6 @@ public class InventoryManager : MonoBehaviour
             textPanel.DisplayText("That should be enough wood");
             EnableFixingBridge();
         }
-
-        else if (item == Item.Berries)
-        {
-            EnableFillBarrel();
-        }
     }
 
     private void EnableChoppingTrees()
@@ -64,17 +59,6 @@ public class InventoryManager : MonoBehaviour
         if (interactableBridge != null)
         {
             interactableBridge.CanInteract = true;
-        }
-    }
-
-    private void EnableFillBarrel()
-    {
-        Barrel barrel = FindObjectOfType<Barrel>();
-        IInteractable interactableBarrel = barrel.GetComponent<IInteractable>();
-
-        if (interactableBarrel != null)
-        {
-            interactableBarrel.CanInteract = true;
         }
     }
 
