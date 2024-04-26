@@ -10089,10 +10089,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894c81d43cd2d435690f6a4932019c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1209902268}
-  speed: 12
-  gravity: -9.81
-  jumpHeight: 3
+  rb: {fileID: 0}
+  playerCam: {fileID: 0}
+  fov: 70
+  cameraCanMove: 1
+  mouseSens: 2
+  maxLookAngle: 90
+  gravityMultiplier: 2
+  canMove: 0
+  walkSpeed: 5
+  maxVelChange: 10
+  enableJump: 1
+  jumpKey: 32
+  jumpForce: 5
+  enableViewBob: 1
+  joint: {fileID: 0}
+  bobSpeed: 10
+  bobAmount: {x: 0.15, y: 0.05, z: 0}
 --- !u!1001 &1220427172
 PrefabInstance:
   m_ObjectHideFlags: 0
