@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
-
+    [SerializeField] private GameObject infoMenuUI;
     [SerializeField] public static bool isPaused;
 
     private void Update()
@@ -42,5 +42,18 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         isPaused = false; //for the resume button
     }
+    public void ActivateInfoMenu()
+    {
+
+        infoMenuUI.SetActive(true);
+    }
+    public void DeactivateInfoMenu()
+    {
+        infoMenuUI.SetActive(false);
+    }
+   
+
+
+
 
 }

@@ -10,6 +10,7 @@ public class Torch : MonoBehaviour, IInteractable
     public bool colorGreen;
     public bool canTurnOn;
 
+
     public GameObject turnOnLight;
     private GameObject player;
 
@@ -36,6 +37,7 @@ public class Torch : MonoBehaviour, IInteractable
             player.GetComponentInChildren<Lantern>().ChangeColor();
         }
     }
+
     void TurnOn()
     {
         turnOnLight.SetActive(true);
