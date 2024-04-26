@@ -10580,9 +10580,10 @@ PrefabInstance:
     - target: {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4009919533279016670, guid: c78b2f6da8c496044acf68bbb77bee45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -10590,6 +10591,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2128732111}
+    - targetCorrespondingSourceObject: {fileID: 3290598117132601010, guid: c78b2f6da8c496044acf68bbb77bee45,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128732112}
   m_SourcePrefab: {fileID: 100100000, guid: c78b2f6da8c496044acf68bbb77bee45, type: 3}
 --- !u!1001 &272111669
 PrefabInstance:
@@ -18871,7 +18876,7 @@ GameObject:
   - component: {fileID: 500146005}
   - component: {fileID: 500146004}
   - component: {fileID: 500146003}
-  - component: {fileID: 500146006}
+  - component: {fileID: 500146007}
   m_Layer: 0
   m_Name: BrokenBridge
   m_TagString: Untagged
@@ -18956,8 +18961,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500146001}
   m_Mesh: {fileID: -2432090755550338912, guid: fb7383cb48c4c9d4cade41743b8f4740, type: 3}
---- !u!64 &500146006
-MeshCollider:
+--- !u!65 &500146007
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18974,10 +18979,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: fb7383cb48c4c9d4cade41743b8f4740, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.8886938, y: 2.2477229, z: 6.269666}
+  m_Center: {x: -0.059956547, y: 1.5411124, z: 0.110497355}
 --- !u!1001 &501265936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82627,6 +82631,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20094c97b51e14d9395e2844a66f4862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2128732112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128732107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13554367, y: 0.31475407, z: 0.032267336}
+  m_Center: {x: 0.04314414, y: 0.23232111, z: 0.00025292748}
 --- !u!4 &2129302324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214355421179795162, guid: 8a4bc7e46519bd848909f56eb590b5e1,
