@@ -70338,7 +70338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1777224602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85284,10 +85284,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause and Text Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 1743547309802130256, guid: f004907b64b5042cd8687e8093521ccc,
+    - target: {fileID: 850976200511378649, guid: f004907b64b5042cd8687e8093521ccc,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743547309802130256, guid: f004907b64b5042cd8687e8093521ccc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395350079799410467, guid: f004907b64b5042cd8687e8093521ccc,
         type: 3}
@@ -85392,6 +85397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239111967533697267, guid: f004907b64b5042cd8687e8093521ccc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984968876245854939, guid: f004907b64b5042cd8687e8093521ccc,
         type: 3}
