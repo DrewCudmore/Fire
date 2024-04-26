@@ -273,7 +273,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 8161455276457322380}
   isPanel: 0
-  displayText: {fileID: 0}
 --- !u!1 &2904585458816536565
 GameObject:
   m_ObjectHideFlags: 0

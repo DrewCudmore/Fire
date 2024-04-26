@@ -8,7 +8,7 @@ TagManager:
   - Interactable
   - ChoppableTree
   - LanternColor
-  - Barrel
+  - Info Menu
   layers:
   - Default
   - TransparentFX
