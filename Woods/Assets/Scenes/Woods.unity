@@ -14201,80 +14201,6 @@ MonoBehaviour:
   choppingAudio: {fileID: 0}
   shakeTree: 0
   hitsToDie: 5
---- !u!1001 &348474356
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 834242343}
-    m_Modifications:
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 31.681997
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.7885695
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.2159905
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241145600527033769, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-        type: 3}
-      propertyPath: m_Name
-      value: Berry (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 74bae41ef6a494f8585e39f17e43b9d7, type: 3}
---- !u!4 &348474357 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1077534015300374004, guid: 74bae41ef6a494f8585e39f17e43b9d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 348474356}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &349444002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32894,10 +32820,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 337330626}
-    - targetCorrespondingSourceObject: {fileID: 879484755347225886, guid: 74c14ee01a5854a3991e9a1836b66f18,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 348474357}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8195028930796096313, guid: 74c14ee01a5854a3991e9a1836b66f18,
         type: 3}
