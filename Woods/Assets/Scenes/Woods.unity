@@ -40324,7 +40324,7 @@ PrefabInstance:
     - target: {fileID: 3058908847779239408, guid: 32a764c65c222ef41bbabe0d40bc4fb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.067
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 3058908847779239408, guid: 32a764c65c222ef41bbabe0d40bc4fb7,
         type: 3}
@@ -40334,7 +40334,7 @@ PrefabInstance:
     - target: {fileID: 3058908847779239408, guid: 32a764c65c222ef41bbabe0d40bc4fb7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.164
+      value: -39.75
       objectReference: {fileID: 0}
     - target: {fileID: 3058908847779239408, guid: 32a764c65c222ef41bbabe0d40bc4fb7,
         type: 3}
@@ -40379,6 +40379,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035400759}
+    - targetCorrespondingSourceObject: {fileID: 2393871900626259786, guid: 32a764c65c222ef41bbabe0d40bc4fb7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1035400762}
   m_SourcePrefab: {fileID: 100100000, guid: 32a764c65c222ef41bbabe0d40bc4fb7, type: 3}
 --- !u!4 &1035400754 stripped
 Transform:
@@ -40415,6 +40419,21 @@ CapsuleCollider:
   m_Height: 2.5512877
   m_Direction: 1
   m_Center: {x: 0.29240695, y: 0.5689892, z: 0.000014249745}
+--- !u!114 &1035400762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035400755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de032e98cf516466d9775a0bd04cb85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 2393871900626259786, guid: 6d4535a96b61740f58cae9c2c677c1dc, type: 3}
+  fullBarrel: {fileID: 2393871900626259786, guid: 0211fd279dcab447da109d83ff091053,
+    type: 3}
 --- !u!1001 &1035759097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53721,6 +53740,7 @@ Transform:
   - {fileID: 1552221151}
   - {fileID: 271229768}
   - {fileID: 1014481375}
+  - {fileID: 348474357}
   m_Father: {fileID: 1078090571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1418013586
@@ -82635,22 +82655,3 @@ SceneRoots:
   - {fileID: 1679757558}
   - {fileID: 197754571}
   - {fileID: 1899095186}
-  - {fileID: 1188202159}
-  - {fileID: 1797741734}
-  - {fileID: 2109603237}
-  - {fileID: 430352412}
-  - {fileID: 125268770}
-  - {fileID: 918889359}
-  - {fileID: 18586484}
-  - {fileID: 1241623348}
-  - {fileID: 1631728812}
-  - {fileID: 1452802694}
-  - {fileID: 1890752948}
-  - {fileID: 1407821012}
-  - {fileID: 1335084450}
-  - {fileID: 285630418}
-  - {fileID: 781602330}
-  - {fileID: 442467706}
-  - {fileID: 321221452}
-  - {fileID: 246821665}
-  - {fileID: 450217246}

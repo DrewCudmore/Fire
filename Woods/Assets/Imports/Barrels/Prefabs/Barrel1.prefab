@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3058908847779239408}
   - component: {fileID: 2151795892575885909}
   - component: {fileID: 4195175342634282655}
+  - component: {fileID: 8639049517047653108}
   m_Layer: 0
   m_Name: Barrel1
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2393871900626259786}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2151795892575885909
 MeshFilter:
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8639049517047653108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393871900626259786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de032e98cf516466d9775a0bd04cb85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 2393871900626259786, guid: 6d4535a96b61740f58cae9c2c677c1dc, type: 3}
+  fullBarrel: {fileID: 2393871900626259786, guid: 0211fd279dcab447da109d83ff091053,
+    type: 3}
