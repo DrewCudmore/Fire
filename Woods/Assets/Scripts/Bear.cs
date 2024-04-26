@@ -13,11 +13,12 @@ public class Bear : MonoBehaviour
     public BoxCollider attackPlayer;
 
     public int triggerCounter = 0;
-    //public bool targettingPlayer = false;
+    public bool targettingPlayer = false;
 
     public Transform target;
+    public Transform home;
+    public Transform berries;
     NavMeshAgent agent;
-    private Vector3 home;
 
     // Start is called before the first frame update
     void Start()
@@ -47,10 +48,12 @@ public class Bear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!targettingPlayer)
-        //{
-        //    agent.Move(home);
-        //}
+        if (!targettingPlayer)
+        {
+            agent.SetDestination(home.position);
+            //agent.Move(home);
+        }
+        //agent.Move(home);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,7 +71,7 @@ public class Bear : MonoBehaviour
 
                 case 2:
                     agent.SetDestination(target.position);
-                    //targettingPlayer = true;
+                    targettingPlayer = true;
                 break;
 
                 case 3:
@@ -96,12 +99,12 @@ public class Bear : MonoBehaviour
                     break;
 
                 case 2:
-                    agent.Move(home);
+                    //agent.Move(home);
                     //if (agent.hasPath)
                     //{
                     //    agent.
                     //}
-                    //targettingPlayer = false;
+                    targettingPlayer = false;
                     break;
 
                 case 3:
