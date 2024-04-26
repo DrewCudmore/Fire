@@ -7,11 +7,6 @@ public class BerryBush : MonoBehaviour, IInteractable
     public bool CanInteract { get; set; } = true;
     public GameObject berryParent;
 
-    private void Start()
-    {
-        
-    }
-
     public Item Interact()
     {
         Destroy(berryParent);
