@@ -100,6 +100,7 @@ LightmapSettings:
   m_LightingDataAsset: {fileID: 112000000, guid: 10788da4b87c0e842a67bd4343452888,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 2dcd90bdf787743fd8642d91738fda86,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 944091b321e3b463e8ae3546f0da310b,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
