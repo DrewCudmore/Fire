@@ -9,7 +9,7 @@ public class Bear : MonoBehaviour
     Animator ani;
     private GameManager gameManager;
 
-    public BoxCollider startWalking;
+    //public BoxCollider startWalking;
     public BoxCollider chasePlayer;
     public BoxCollider attackPlayer;
 
@@ -19,16 +19,11 @@ public class Bear : MonoBehaviour
     public Transform target;
     public Transform home;
     public Transform berries;
+    public Transform berriesLook;
     NavMeshAgent agent;
 
-    //public Transform WaypointA;
-    //public Transform WaypointB;
-    //public Transform WaypointC;
-    //public List<Transform> Waypoints = new List<Transform>();
-    //int index = 0;
     public Transform[] waypoints;
     private int currentIndex = 0;
-    private float speed = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,20 +32,21 @@ public class Bear : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
-        startWalking = GetComponent<BoxCollider>();
+        //startWalking = GetComponent<BoxCollider>();
+        chasePlayer = GetComponent<BoxCollider>();
         attackPlayer = GetComponent<BoxCollider>();
 
         agent = GetComponent<NavMeshAgent>();
         //target = GameObject.FindGameObjectWithTag("Player").transform;
         
 
-        ani.SetBool("Walking", false);
+        ani.SetBool("Walking", true);
         ani.SetBool("Running", false);
         ani.SetBool("Turning", false);
         ani.SetBool("Attack", false);
         ani.SetBool("Eating", false);
         ani.SetBool("Sitting", false);
-        ani.SetBool("Sleeping", true);
+        ani.SetBool("Sleeping", false);
         //ani.SetBool("", false);
         //ani.SetBool("", false);
     }
@@ -74,9 +70,17 @@ public class Bear : MonoBehaviour
         if (Barrel.isFull)
         {
             agent.SetDestination(berries.position);
-            startWalking.enabled = false;
             chasePlayer.enabled = false;
             attackPlayer.enabled = false;
+            if (agent.remainingDistance < 0.01f)
+            {
+                ani.SetBool("Eating", true);
+                ani.SetBool("Walking", false);
+                transform.LookAt(berriesLook);
+            }
+            //if (Vector3.Distance(transform.position, berries.position) < 0.01f)
+            //{
+            //}
         }
     }
 
@@ -88,17 +92,17 @@ public class Bear : MonoBehaviour
             Debug.Log("current trigger value on enter " + triggerCounter);
             switch (triggerCounter)
             {
-                case 1:
-                    ani.SetBool("Walking", true);
-                    ani.SetBool("Sleeping", false);
-                    break;
+                //case 1:
+                //    ani.SetBool("Walking", true);
+                //    ani.SetBool("Sleeping", false);
+                //    break;
 
-                case 2:
+                case 1:
                     agent.SetDestination(target.position);
                     targettingPlayer = true;
                     break;
 
-                case 3:
+                case 2:
                     if (!Barrel.isFull)
                     {
                         ani.SetBool("Attack", true);
@@ -124,17 +128,17 @@ public class Bear : MonoBehaviour
         {
             switch (triggerCounter)
             {
-                case 1:
-                    ani.SetBool("Walking", false);
-                    ani.SetBool("Sleeping", true);
-                    agent.ResetPath();
-                    break;
+                //case 1:
+                //    ani.SetBool("Walking", false);
+                //    ani.SetBool("Sleeping", true);
+                //    agent.ResetPath();
+                //    break;
 
-                case 2:
+                case 1:
                     targettingPlayer = false;
                     break;
 
-                case 3:
+                case 2:
                     ani.SetBool("Attack", false);
                     //triggerCounter--;
                     break;
@@ -145,19 +149,4 @@ public class Bear : MonoBehaviour
             triggerCounter--;
         }
     }
-
-    //public void StartPatrolling(ref int index)
-    //{
-    //    if (index > Waypoints.Count)
-    //    {
-    //        index = 0;
-    //    }
-    //    agent.SetDestination(Waypoints[index].position);
-    //    index++;
-    //}
-
-    //public void SetDestination(Vector3 pos)
-    //{
-    //    agent.SetDestination(pos);
-    //}
 }
