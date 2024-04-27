@@ -1961,14 +1961,12 @@ GameObject:
   - component: {fileID: 3734775969355451150}
   - component: {fileID: 3156651324098583682}
   - component: {fileID: 3692075199964539926}
-  - component: {fileID: 5489752240622868224}
-  - component: {fileID: 3909755718445548640}
   - component: {fileID: 2660434347599009729}
   - component: {fileID: 7428508475539493109}
   - component: {fileID: 5831860706925661186}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Bear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2024,7 +2022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  startWalking: {fileID: 3909755718445548640}
   chasePlayer: {fileID: 2660434347599009729}
   attackPlayer: {fileID: 7428508475539493109}
   triggerCounter: 0
@@ -2032,6 +2029,7 @@ MonoBehaviour:
   target: {fileID: 0}
   home: {fileID: 0}
   berries: {fileID: 0}
+  berriesLook: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -2058,54 +2056,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2959467708922500008, guid: bf9ab18afee2f164d9b48f5591a2e137, type: 3}
---- !u!54 &5489752240622868224
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7962199819078159310}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!65 &3909755718445548640
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7962199819078159310}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 113.2, y: 7.23, z: 133.4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &2660434347599009729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2125,7 +2075,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.11, y: 4.67, z: 9.07}
+  m_Size: {x: 12.71, y: 4.67, z: 13.04}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &7428508475539493109
 BoxCollider:
