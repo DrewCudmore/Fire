@@ -20,6 +20,14 @@ public class Bear : MonoBehaviour
     public Transform berries;
     NavMeshAgent agent;
 
+    //public Transform WaypointA;
+    //public Transform WaypointB;
+    //public Transform WaypointC;
+    //public List<Transform> Waypoints = new List<Transform>();
+    //int index = 0;
+    public Transform[] waypoints;
+    private int currentIndex = 0;
+    private float speed = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +40,8 @@ public class Bear : MonoBehaviour
         attackPlayer = GetComponent<BoxCollider>();
 
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
+        
 
         ani.SetBool("Walking", false);
         ani.SetBool("Running", false);
@@ -50,10 +59,30 @@ public class Bear : MonoBehaviour
     {
         if (!targettingPlayer)
         {
-            agent.SetDestination(home.position);
-            //agent.Move(home);
+            //agent.SetDestination(home.position);
+            Transform point = waypoints[currentIndex];
+            //Transform point = waypoints[0];
+            //Debug.Log(waypoints.Length);
+            //Debug.Log(currentIndex);
+            Debug.Log(point);
+            if (Vector3.Distance(transform.position, point.position) < 0.01f)
+            {
+                currentIndex = (currentIndex + 1) % waypoints.Length;
+                Debug.Log(currentIndex);
+                //agent.SetDestination(point.position);
+            }
+            else
+            {
+                //transform.position = Vector3.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
+                agent.SetDestination(point.position);
+            }
         }
-        //agent.Move(home);
+        //if (Barrel.isFull) 
+        //{
+        //    agent.SetDestination(berries.position);
+        //    startWalking.enabled = false;
+        //    attackPlayer.enabled = false;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,12 +96,12 @@ public class Bear : MonoBehaviour
                 case 1:
                     ani.SetBool("Walking", true);
                     ani.SetBool("Sleeping", false);
-                break;
+                    break;
 
                 case 2:
                     agent.SetDestination(target.position);
                     targettingPlayer = true;
-                break;
+                    break;
 
                 case 3:
                     ani.SetBool("Attack", true);
@@ -84,6 +113,11 @@ public class Bear : MonoBehaviour
                     break;
             }
         }
+        //if (other.CompareTag("Waypoints"))
+        //{
+        //    Debug.Log("waypoint A reached");
+        //    StartPatrolling(ref index);
+        //}
     }
 
     private void OnTriggerExit(Collider other)
@@ -99,11 +133,6 @@ public class Bear : MonoBehaviour
                     break;
 
                 case 2:
-                    //agent.Move(home);
-                    //if (agent.hasPath)
-                    //{
-                    //    agent.
-                    //}
                     targettingPlayer = false;
                     break;
 
@@ -118,4 +147,19 @@ public class Bear : MonoBehaviour
             triggerCounter--;
         }
     }
+
+    //public void StartPatrolling(ref int index)
+    //{
+    //    if (index > Waypoints.Count)
+    //    {
+    //        index = 0;
+    //    }
+    //    agent.SetDestination(Waypoints[index].position);
+    //    index++;
+    //}
+
+    //public void SetDestination(Vector3 pos)
+    //{
+    //    agent.SetDestination(pos);
+    //}
 }

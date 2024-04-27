@@ -10,6 +10,8 @@ TagManager:
   - LanternColor
   - Info Menu
   - Barrel
+  - Waypoints
+  - Bear
   layers:
   - Default
   - TransparentFX
