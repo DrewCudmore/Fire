@@ -10,6 +10,7 @@ public class Bear : MonoBehaviour
     private GameManager gameManager;
 
     public BoxCollider startWalking;
+    public BoxCollider chasePlayer;
     public BoxCollider attackPlayer;
 
     public int triggerCounter = 0;
@@ -59,30 +60,24 @@ public class Bear : MonoBehaviour
     {
         if (!targettingPlayer)
         {
-            //agent.SetDestination(home.position);
             Transform point = waypoints[currentIndex];
-            //Transform point = waypoints[0];
-            //Debug.Log(waypoints.Length);
-            //Debug.Log(currentIndex);
-            Debug.Log(point);
             if (Vector3.Distance(transform.position, point.position) < 0.01f)
             {
                 currentIndex = (currentIndex + 1) % waypoints.Length;
-                Debug.Log(currentIndex);
-                //agent.SetDestination(point.position);
+                //Debug.Log(currentIndex);
             }
             else
             {
-                //transform.position = Vector3.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
                 agent.SetDestination(point.position);
             }
         }
-        //if (Barrel.isFull) 
-        //{
-        //    agent.SetDestination(berries.position);
-        //    startWalking.enabled = false;
-        //    attackPlayer.enabled = false;
-        //}
+        if (Barrel.isFull)
+        {
+            agent.SetDestination(berries.position);
+            startWalking.enabled = false;
+            chasePlayer.enabled = false;
+            attackPlayer.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -104,8 +99,11 @@ public class Bear : MonoBehaviour
                     break;
 
                 case 3:
-                    ani.SetBool("Attack", true);
-                    gameManager.KillPlayer("BEAR ATTACK AAAAAAAAAAHHHHH");
+                    if (!Barrel.isFull)
+                    {
+                        ani.SetBool("Attack", true);
+                        gameManager.KillPlayer("BEAR ATTACK AAAAAAAAAAHHHHH");
+                    }
 
                     break;
 

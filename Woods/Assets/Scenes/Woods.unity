@@ -32957,6 +32957,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1750371147}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &859637726 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2660434347599009729, guid: f5b41ba4c79702547a89de7544b80656,
+    type: 3}
+  m_PrefabInstance: {fileID: 1750371147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &859637732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67268,6 +67274,11 @@ PrefabInstance:
       propertyPath: WaypointC
       value: 
       objectReference: {fileID: 1349907138}
+    - target: {fileID: 3156651324098583682, guid: f5b41ba4c79702547a89de7544b80656,
+        type: 3}
+      propertyPath: chasePlayer
+      value: 
+      objectReference: {fileID: 859637726}
     - target: {fileID: 3156651324098583682, guid: f5b41ba4c79702547a89de7544b80656,
         type: 3}
       propertyPath: PathNodes.Array.size
