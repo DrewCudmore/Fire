@@ -71,6 +71,7 @@ public class Bear : MonoBehaviour
             {
                 ani.SetBool("Sleeping", true);
                 ani.SetBool("Walking", false);
+                agent.enabled = false;
             }
         }
         if (Barrel.isFull)
