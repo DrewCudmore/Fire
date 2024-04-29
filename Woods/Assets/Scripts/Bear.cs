@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Bear : MonoBehaviour
 {
-    public Rigidbody rb;
     Animator ani;
     private GameManager gameManager;
 
@@ -29,7 +28,6 @@ public class Bear : MonoBehaviour
     {
         gameManager = GameManager.Instance;
 
-        //rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
         //startWalking = GetComponent<BoxCollider>();
@@ -56,15 +54,23 @@ public class Bear : MonoBehaviour
     {
         if (!targettingPlayer)
         {
-            Transform point = waypoints[currentIndex];
-            if (Vector3.Distance(transform.position, point.position) < 0.01f)
+            if (waypoints.Length > 0)
             {
-                currentIndex = (currentIndex + 1) % waypoints.Length;
-                //Debug.Log(currentIndex);
+                Transform point = waypoints[currentIndex];
+                if (Vector3.Distance(transform.position, point.position) < 0.01f)
+                {
+                    currentIndex = (currentIndex + 1) % waypoints.Length;
+                    //Debug.Log(currentIndex);
+                }
+                else
+                {
+                    agent.SetDestination(point.position);
+                }
             }
             else
             {
-                agent.SetDestination(point.position);
+                ani.SetBool("Sleeping", true);
+                ani.SetBool("Walking", false);
             }
         }
         if (Barrel.isFull)
