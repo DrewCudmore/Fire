@@ -37,10 +37,23 @@ public class InventoryManager : MonoBehaviour
             textPanel.DisplayText("That should be enough wood");
             EnableFixingBridge();
         }
-
         else if (item == Item.Berries)
         {
-            EnableFillBarrel();
+            if (inventory.Count(i => i == Item.Berries) == 1)
+            {
+                textPanel.DisplayText("I should collect more of these.");
+            }
+
+            else if (inventory.Count(i => i == Item.Berries) == 2)
+            {
+                textPanel.DisplayText("I should collect more of these, maybe I can use them later.");
+            }
+
+            if (inventory.Count(i => i == Item.Berries) >= 3)
+            {
+                textPanel.DisplayText("That should be enough berries, I wonder where I should put them.");
+                EnableFillBarrel();
+            }
         }
     }
 
