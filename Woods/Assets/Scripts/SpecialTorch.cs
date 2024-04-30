@@ -67,5 +67,9 @@ public class SpecialTorch : MonoBehaviour, IInteractable
 
             isCorrectColor = false;
         }
+        if (isCorrectColor)
+        {
+            this.CanInteract = false;
+        }
     }
 }
