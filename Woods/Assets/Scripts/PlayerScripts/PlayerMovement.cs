@@ -153,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
     public void disableMovement()
     {
         canMove = false;
+        rb.velocity = new Vector3(0, 0, 0);
     }
 
 
