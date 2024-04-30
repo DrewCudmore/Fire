@@ -13,12 +13,16 @@ public class Torch : MonoBehaviour, IInteractable
 
     public GameObject turnOnLight;
     private GameObject player;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
+
+
     void ChangeColor()
     {
         if (colorBlue)
@@ -41,6 +45,7 @@ public class Torch : MonoBehaviour, IInteractable
     void TurnOn()
     {
         turnOnLight.SetActive(true);
+        audioSource.Play();
     }
     public Item Interact()
     {

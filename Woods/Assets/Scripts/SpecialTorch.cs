@@ -11,6 +11,8 @@ public class SpecialTorch : MonoBehaviour, IInteractable
     public GameObject redLight;
     public GameObject greenLight;
     public GameObject regLight;
+    private AudioSource audioSource;
+
 
     public bool blue;
     public bool red;
@@ -21,11 +23,13 @@ public class SpecialTorch : MonoBehaviour, IInteractable
     void Start()
     {
         lanternColor = GameObject.FindGameObjectWithTag("LanternColor");
+        audioSource = GetComponent<AudioSource>();
     }
 
     public Item Interact()
     {
         Torch();
+        audioSource.Play();
         return Item.None;
     }
 
