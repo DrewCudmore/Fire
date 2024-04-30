@@ -7,6 +7,7 @@ public class Car : MonoBehaviour, IInteractable
 {
     public bool CanInteract { get; set; } = true;
     private GameManager gameManager;
+    public AudioSource audioSource;
 
     private SceneSwitcher sceneSwitcher;
 
@@ -15,7 +16,12 @@ public class Car : MonoBehaviour, IInteractable
     {
         gameManager.FadeOutScreen(gameManager.fadeDuration);
         sceneSwitcher.sceneToSwitchTo = "EndDriving";
-        sceneSwitcher.SwitchSceneWithFadeOut(2);
+        sceneSwitcher.SwitchSceneWithFadeOut(3);
+        this.CanInteract = false;
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
 
         return Item.None;
     }
@@ -25,11 +31,7 @@ public class Car : MonoBehaviour, IInteractable
     {
         sceneSwitcher = this.GetComponent<SceneSwitcher>();
         gameManager = GameManager.Instance;
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
