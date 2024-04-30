@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         textPanel = FindObjectOfType<TextPanel>();
-        textPanel.DisplayText("Use WASD and E to interact");
 
         FadeInScreen(fadeDuration);
     }
