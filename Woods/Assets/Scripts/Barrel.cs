@@ -5,7 +5,6 @@ using UnityEngine;
 public class Barrel : MonoBehaviour, IInteractable
 {
     public bool CanInteract { get; set; } = false;
-    public GameObject barrel;
     public GameObject fullBarrel;
     private TextPanel textPanel;
 
@@ -26,7 +25,7 @@ public class Barrel : MonoBehaviour, IInteractable
     }
     public Item Interact()
     {
-        if (barrel != null)
+        if (gameObject != null)
         {
             FillBarrel();
             
@@ -39,10 +38,10 @@ public class Barrel : MonoBehaviour, IInteractable
     public void FillBarrel()
     {
         isFull = true;
-        Vector3 position = barrel.transform.position;
+        Vector3 position = gameObject.transform.position;
         boxText.enabled = false;
         Instantiate(fullBarrel, position, Quaternion.identity);
-        barrel.SetActive(false);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
