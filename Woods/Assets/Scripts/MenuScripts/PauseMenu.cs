@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -32,7 +33,11 @@ public class PauseMenu : MonoBehaviour
         //brings up pause menu
         pauseMenuUI.SetActive(true);
     }
-
+    public void ActivateRestart()
+    {
+        DeactivateMenu();
+        SceneManager.LoadScene("StartMenu");
+    }
     public void DeactivateMenu()
     {
         Cursor.lockState = CursorLockMode.Locked;
