@@ -8,14 +8,18 @@ public class MoveableObstacle : MonoBehaviour
     public SpecialTorch blueTorch;
     public SpecialTorch redTorch;
     public SpecialTorch greenTorch;
+    public AudioSource audioSource;
 
+    public bool audioPlaying = false;
     public float moveSpeed = 1f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
     }
 
     // Update is called once per frame
@@ -35,7 +39,13 @@ public class MoveableObstacle : MonoBehaviour
     private void MoveAway()
     {
         transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
-        Destroy(gameObject, 10f);
+        if (!audioPlaying)
+        {
+            audioSource.Play();
+            audioPlaying = true;
+        }
+        
+        Destroy(gameObject, 8f);
     }
 
 
