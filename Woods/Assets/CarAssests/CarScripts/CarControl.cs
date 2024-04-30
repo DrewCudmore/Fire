@@ -15,6 +15,7 @@ public class CarControl : MonoBehaviour
 
     WheelControl[] wheels;
     Rigidbody rigidBody;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,8 @@ public class CarControl : MonoBehaviour
 
         // Find all child GameObjects that have the WheelControl script attached
         wheels = GetComponentsInChildren<WheelControl>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
     // Update is called once per frame
@@ -35,6 +38,11 @@ public class CarControl : MonoBehaviour
 
         float vInput = Input.GetAxis("Vertical");
         float hInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            audioSource.Play();
+        }
 
         // Calculate current speed in relation to the forward direction of the car
         // (this returns a negative number when traveling backwards)
