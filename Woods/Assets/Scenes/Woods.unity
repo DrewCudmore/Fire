@@ -75635,6 +75635,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7208524446699499168, guid: b40ebb8c661404cb9960fc5f83633022,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7894247292890868084, guid: b40ebb8c661404cb9960fc5f83633022,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
