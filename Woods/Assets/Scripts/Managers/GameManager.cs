@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private GameObject player;
     PlayerMovement playerMovement;
-    private Transform lastCheckpoint;
+    public Transform lastCheckpoint;
 
     private TextPanel textPanel;
 
