@@ -43,18 +43,18 @@ public class WeatherManager : MonoBehaviour
         // Test with keys, later this can be called by different scripts if the player walks
         // into a new area or accomplishes something that changes the weather
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            HandleClear();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            HandleRain();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            HandleThunder();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    HandleClear();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    HandleRain();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    HandleThunder();
+        //}
     }
 
     void PlayAudioForWeather()
