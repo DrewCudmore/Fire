@@ -59,7 +59,7 @@ public class TextPanel : MonoBehaviour
         ActivatePanel();
 
         // Start the timer coroutine
-        StartCoroutine(TurnOffPanelAfterDelay(6f));
+        StartCoroutine(TurnOffPanelAfterDelay(8f));
     }
 
     private IEnumerator TurnOffPanelAfterDelay(float delay)
