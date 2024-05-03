@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
-        float distance = 0.75f;
+        float distance = 0.8f;
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (isGrounded)
+        if (isGrounded && canMove)
         {
             rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
             isGrounded = false;
