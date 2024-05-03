@@ -20,6 +20,10 @@ public class Bear : MonoBehaviour
     public Transform berriesLook;
     NavMeshAgent agent;
 
+    private AudioSource audioSource;
+    public AudioClip chaseAudioClip; 
+    public AudioClip attackAudioClip; 
+
     public Transform[] waypoints;
     private int currentIndex = 0;
 
@@ -32,8 +36,10 @@ public class Bear : MonoBehaviour
 
         chasePlayer = GetComponent<BoxCollider>();
         attackPlayer = GetComponent<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
 
-        agent = GetComponent<NavMeshAgent>();        
+        agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
 
         ani.SetBool("Walking", true);
         ani.SetBool("Running", false);
@@ -96,12 +102,16 @@ public class Bear : MonoBehaviour
                 case 1:
                     agent.SetDestination(target.position);
                     targettingPlayer = true;
+                    audioSource.clip = chaseAudioClip;
+                    audioSource.Play();
                     break;
 
                 case 2:
                     if (!Barrel.isFull)
                     {
                         ani.SetBool("Attack", true);
+                        audioSource.clip = attackAudioClip;
+                        audioSource.Play();
                         gameManager.KillPlayer("BEAR ATTACK AAAAAAAAAAHHHHH");
                     }
 
