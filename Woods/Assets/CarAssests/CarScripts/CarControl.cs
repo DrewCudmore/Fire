@@ -8,6 +8,7 @@ public class CarControl : MonoBehaviour
     public float motorTorque = 2000;
     //public float brakeTorque = 2000;
     public float maxSpeed = 20;
+    public float minSpeed = 5;
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
@@ -38,6 +39,15 @@ public class CarControl : MonoBehaviour
 
         float vInput = Input.GetAxis("Vertical");
         float hInput = Input.GetAxis("Horizontal");
+        //if (vInput < 0.0f)
+        //{
+        //    vInput = 0.0f;
+        //}
+
+        if (vInput < minSpeed)
+        {
+            vInput = minSpeed;
+        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
