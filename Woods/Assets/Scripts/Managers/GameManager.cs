@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float fadeDuration = 4f;
     public Image fadePanel;
     public TextMeshProUGUI deathText;
+    public AudioSource audioSource;
 
     private bool waitForInput = false;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
 
         FadeInScreen(fadeDuration);
     }
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
         fadePanel.gameObject.SetActive(true);
         playerMovement?.disableMovement();
+        audioSource.Play();
         StartCoroutine(FadeToDeathScreen(deathReason));
     }
 
