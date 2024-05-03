@@ -15,7 +15,8 @@ public class BerryBush : MonoBehaviour, IInteractable
 
     public Item Interact()
     {
-        Destroy(berryParent);
+        this.CanInteract = false;
+        berryParent.SetActive(false);
         audioSource.Play();
 
         return Item.Berries;
