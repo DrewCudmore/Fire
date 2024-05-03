@@ -17,6 +17,8 @@ public class BearActivationText : MonoBehaviour
     {
         berries = Barrel.isFull;
     }
+
+    // This is intended to help the player understand what to do if they don't initially realize
     private void OnTriggerEnter(Collider other)
     {
         if (berries)
