@@ -8,6 +8,7 @@ public class TextPanel : MonoBehaviour
     [SerializeField] private GameObject textPanel;
     [SerializeField] private bool isPanel;
     public TextMeshProUGUI displayText;
+    public AudioSource audioSource;
 
     // Static reference to the TextPanel instance
     public static TextPanel instance;
@@ -17,6 +18,12 @@ public class TextPanel : MonoBehaviour
     {
         // Set the static reference to this instance
         instance = this;
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.1F;
     }
 
     // Update is called once per frame
@@ -57,6 +64,7 @@ public class TextPanel : MonoBehaviour
 
         // Activate the panel
         ActivatePanel();
+        audioSource?.Play();
 
         // Start the timer coroutine
         StartCoroutine(TurnOffPanelAfterDelay(8f));
