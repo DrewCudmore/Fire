@@ -74,6 +74,7 @@ public class Tree : MonoBehaviour, IInteractable
 
     public Item Interact()
     {
+        PlayChoppingWoodSound();
         Item item = Item.None;
 
         if (!shakeTree && !timer_locked_out)
@@ -86,7 +87,6 @@ public class Tree : MonoBehaviour, IInteractable
 
 
             shakeTree = true;
-            PlayChoppingWoodSound();
             ShakeTreeTime();
         }
 
