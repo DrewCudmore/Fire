@@ -7,13 +7,16 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     private InventoryManager inventoryManager;
     public GameObject Axe;
+    private TextPanel textPanel;
 
 
     private void Start()
     {
         gameManager = GameManager.Instance;
         inventoryManager = FindObjectOfType<InventoryManager>();
-        
+        textPanel = FindObjectOfType<TextPanel>();
+        textPanel.DisplayText("My car! I should find a way to get back up there.");
+
     }
 
     void Update()
