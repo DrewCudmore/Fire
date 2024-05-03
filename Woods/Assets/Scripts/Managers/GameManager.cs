@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     PlayerMovement playerMovement;
     public Transform lastCheckpoint;
 
-    private TextPanel textPanel;
-
     public float fadeDuration = 4f;
     public Image fadePanel;
     public TextMeshProUGUI deathText;
@@ -23,7 +21,6 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
-        textPanel = FindObjectOfType<TextPanel>();
 
         FadeInScreen(fadeDuration);
     }

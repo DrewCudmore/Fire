@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script is used to disable the broken bridge object and enable the fixed bridge object
+
 public class FixableBridge : MonoBehaviour
 {
     public GameObject fixedBridge;
@@ -20,7 +22,6 @@ public class FixableBridge : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
 
-        // Check if FixedBridge is a child of this GameObject
         if (fixedBridge != null && fixedBridge.transform.parent == transform)
         {
             fixedBridge.SetActive(false);

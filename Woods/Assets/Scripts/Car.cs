@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// This script is only for the stationary car in the woods scene that transitions into the final driving scene
 public class Car : MonoBehaviour, IInteractable
 {
     public bool CanInteract { get; set; } = true;

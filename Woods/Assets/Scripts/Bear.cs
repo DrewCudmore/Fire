@@ -8,7 +8,6 @@ public class Bear : MonoBehaviour
     Animator ani;
     private GameManager gameManager;
 
-    //public BoxCollider startWalking;
     public BoxCollider chasePlayer;
     public BoxCollider attackPlayer;
 
@@ -23,6 +22,7 @@ public class Bear : MonoBehaviour
 
     public Transform[] waypoints;
     private int currentIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +30,10 @@ public class Bear : MonoBehaviour
 
         ani = GetComponent<Animator>();
 
-        //startWalking = GetComponent<BoxCollider>();
         chasePlayer = GetComponent<BoxCollider>();
         attackPlayer = GetComponent<BoxCollider>();
 
-        agent = GetComponent<NavMeshAgent>();
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
-        
+        agent = GetComponent<NavMeshAgent>();        
 
         ani.SetBool("Walking", true);
         ani.SetBool("Running", false);
@@ -45,8 +42,6 @@ public class Bear : MonoBehaviour
         ani.SetBool("Eating", false);
         ani.SetBool("Sitting", false);
         ani.SetBool("Sleeping", false);
-        //ani.SetBool("", false);
-        //ani.SetBool("", false);
     }
 
     // Update is called once per frame
@@ -60,7 +55,6 @@ public class Bear : MonoBehaviour
                 if (Vector3.Distance(transform.position, point.position) < 0.01f)
                 {
                     currentIndex = (currentIndex + 1) % waypoints.Length;
-                    //Debug.Log(currentIndex);
                 }
                 else
                 {
@@ -85,12 +79,12 @@ public class Bear : MonoBehaviour
                 ani.SetBool("Walking", false);
                 transform.LookAt(berriesLook);
             }
-            //if (Vector3.Distance(transform.position, berries.position) < 0.01f)
-            //{
-            //}
         }
     }
 
+
+    // Case 1: The bear should chase the player when they get within a range
+    // Case 2: When the player is too close, the bear should kill the player
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -99,11 +93,6 @@ public class Bear : MonoBehaviour
             Debug.Log("current trigger value on enter " + triggerCounter);
             switch (triggerCounter)
             {
-                //case 1:
-                //    ani.SetBool("Walking", true);
-                //    ani.SetBool("Sleeping", false);
-                //    break;
-
                 case 1:
                     agent.SetDestination(target.position);
                     targettingPlayer = true;
@@ -122,11 +111,6 @@ public class Bear : MonoBehaviour
                     break;
             }
         }
-        //if (other.CompareTag("Waypoints"))
-        //{
-        //    Debug.Log("waypoint A reached");
-        //    StartPatrolling(ref index);
-        //}
     }
 
     private void OnTriggerExit(Collider other)
@@ -135,19 +119,12 @@ public class Bear : MonoBehaviour
         {
             switch (triggerCounter)
             {
-                //case 1:
-                //    ani.SetBool("Walking", false);
-                //    ani.SetBool("Sleeping", true);
-                //    agent.ResetPath();
-                //    break;
-
                 case 1:
                     targettingPlayer = false;
                     break;
 
                 case 2:
                     ani.SetBool("Attack", false);
-                    //triggerCounter--;
                     break;
 
                 default:
