@@ -25,6 +25,8 @@ public class Torch : MonoBehaviour, IInteractable
 
     void ChangeColor()
     {
+        audioSource.Play();
+
         if (colorBlue)
         {
             player.GetComponentInChildren<Lantern>().changeColorBlue = true;
