@@ -4,33 +4,21 @@ using UnityEngine;
 
 public class CaveAudioHandler : MonoBehaviour
 {
-    public bool turnOnCave ;
-    public bool caveBoundPassed ;
+    public bool inCave ;
     // Start is called before the first frame update
     void Start()
     {
-        turnOnCave = true;
-        caveBoundPassed = false;
+        inCave = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        print(inCave);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        caveBoundPassed = true;
-        if (turnOnCave)
-        {
-            turnOnCave = false;
-            caveBoundPassed = false;
-        }
-        else
-        {
-            turnOnCave = true;
-            caveBoundPassed = false;
-        }
-        
+        inCave = !inCave;
     }
 }
