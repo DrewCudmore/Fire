@@ -9,7 +9,6 @@ public class WeatherManager : MonoBehaviour
         Clear,
         Cave,
         Rain,
-        Thunder
     }
 
     public WeatherStatus currentWeather = WeatherStatus.Clear;
@@ -17,7 +16,6 @@ public class WeatherManager : MonoBehaviour
     public AudioClip clearAudio;
     public AudioClip caveAudio;
     public AudioClip rainAudio;
-    public AudioClip thunderAudio;
     private AudioSource audioSource;
     private GameObject CaveSounds;
     private bool CaveBoundry;
@@ -46,25 +44,9 @@ public class WeatherManager : MonoBehaviour
     void Update()
     {
         
-
-        // Test with keys, later this can be called by different scripts if the player walks
-        // into a new area or accomplishes something that changes the weather
-
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    HandleClear();
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    HandleRain();
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    HandleThunder();
-        //}
     }
 
-    public void PlayAudioForWeather()
+    private void PlayAudioForWeather()
     {
         audioSource.Stop();
 
@@ -79,22 +61,25 @@ public class WeatherManager : MonoBehaviour
             case WeatherStatus.Rain:
                 audioSource.clip = rainAudio;
                 break;
-            case WeatherStatus.Thunder:
-                audioSource.clip = thunderAudio;
-                break;
         }
-
         audioSource.Play();
     }
 
-    void HandleClear()
+    public void HandleClear()
     {
         currentWeather = WeatherStatus.Clear;
         StopRain();
         PlayAudioForWeather();
     }
 
-    void HandleRain()
+    public void HandleCave()
+    {
+        currentWeather = WeatherStatus.Cave;
+        StopRain();
+        PlayAudioForWeather();
+    }
+
+    public void HandleRain()
     {
         currentWeather = WeatherStatus.Rain;
         StartRain();
@@ -102,13 +87,13 @@ public class WeatherManager : MonoBehaviour
     }
 
     // We could make this stop rain as well if we want only thunder
-    void HandleThunder()
-    {
-        currentWeather = WeatherStatus.Thunder;
-        PlayAudioForWeather();
+    //void HandleThunder()
+    //{
+    //    currentWeather = WeatherStatus.Thunder;
+    //    PlayAudioForWeather();
 
-        //TODO: Implement thunder audio, thunder particles/prefab
-    }
+    //    //TODO: Implement thunder audio, thunder particles/prefab
+    //}
 
     void StartRain()
     {
