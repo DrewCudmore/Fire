@@ -96,7 +96,7 @@ public class Bear : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggerCounter++;
-            Debug.Log("current trigger value on enter " + triggerCounter);
+            //Debug.Log("current trigger value on enter " + triggerCounter);
             switch (triggerCounter)
             {
                 case 1:

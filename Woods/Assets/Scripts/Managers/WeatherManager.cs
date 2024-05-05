@@ -7,6 +7,7 @@ public class WeatherManager : MonoBehaviour
     public enum WeatherStatus
     {
         Clear,
+        Cave,
         Rain,
         Thunder
     }
@@ -14,9 +15,12 @@ public class WeatherManager : MonoBehaviour
     public WeatherStatus currentWeather = WeatherStatus.Clear;
 
     public AudioClip clearAudio;
+    public AudioClip caveAudio;
     public AudioClip rainAudio;
     public AudioClip thunderAudio;
     private AudioSource audioSource;
+    private GameObject CaveSounds;
+    private bool CaveBoundry;
 
     public ParticleSystem rainParticleSystem;
 
@@ -36,10 +40,13 @@ public class WeatherManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         PlayAudioForWeather();
+
     }
 
     void Update()
     {
+        
+
         // Test with keys, later this can be called by different scripts if the player walks
         // into a new area or accomplishes something that changes the weather
 
@@ -57,7 +64,7 @@ public class WeatherManager : MonoBehaviour
         //}
     }
 
-    void PlayAudioForWeather()
+    public void PlayAudioForWeather()
     {
         audioSource.Stop();
 
@@ -65,6 +72,9 @@ public class WeatherManager : MonoBehaviour
         {
             case WeatherStatus.Clear:
                 audioSource.clip = clearAudio;
+                break;
+            case WeatherStatus.Cave:
+                audioSource.clip = caveAudio;
                 break;
             case WeatherStatus.Rain:
                 audioSource.clip = rainAudio;
