@@ -4,33 +4,29 @@ using UnityEngine;
 
 public class CaveAudioHandler : MonoBehaviour
 {
-    public bool turnOnCave ;
-    public bool caveBoundPassed ;
+    public bool inCave ;
+    private WeatherManager weatherManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        turnOnCave = true;
-        caveBoundPassed = false;
+        weatherManager = FindObjectOfType<WeatherManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        caveBoundPassed = true;
-        if (turnOnCave)
+        inCave = !inCave;
+        if (inCave)
         {
-            turnOnCave = false;
-            caveBoundPassed = false;
-        }
-        else
+            weatherManager.HandleCave();
+        } else
         {
-            turnOnCave = true;
-            caveBoundPassed = false;
+            weatherManager.HandleClear();
         }
-        
     }
 }
