@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out IDialogue dialogueComponent))
         {
-            TextPanel.instance.DisplayText(dialogueComponent.dialogue);
+            TextPanel.instance.DisplayText(dialogueComponent.dialogue, false);
         }
     }
 

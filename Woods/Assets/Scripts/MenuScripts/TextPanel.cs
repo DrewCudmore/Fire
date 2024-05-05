@@ -57,14 +57,16 @@ public class TextPanel : MonoBehaviour
         }
     }
 
-    public void DisplayText(string text)
+    public void DisplayText(string text, bool isHint=true)
     {
         // Set the display text
         displayText.text = text;
 
+        // Only want audio for hints, otherwise its too common
+        if (isHint) audioSource?.Play();
+
         // Activate the panel
         ActivatePanel();
-        audioSource?.Play();
 
         // Start the timer coroutine
         StartCoroutine(TurnOffPanelAfterDelay(8f));
