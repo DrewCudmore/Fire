@@ -23,7 +23,11 @@ public class TextPanel : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.1F;
+
+        if (audioSource != null)
+        {
+            audioSource.volume = 0.1F;
+        }
     }
 
     // Update is called once per frame
