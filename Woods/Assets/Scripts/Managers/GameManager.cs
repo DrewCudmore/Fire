@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     {
         fadePanel.gameObject.SetActive(true);
         playerMovement?.disableMovement();
-        audioSource.volume -= .7f;
+        audioSource.volume = .7f;
         audioSource.Play();
         StartCoroutine(FadeToDeathScreen(deathReason));
     }
