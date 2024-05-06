@@ -5255,7 +5255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380566123568001457}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lantern Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5354,7 +5354,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5390,7 +5390,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1663089589188072152}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -10258,7 +10259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564236465400040899}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Axe Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10329,8 +10330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeather: 0
   clearAudio: {fileID: 8300000, guid: fa9cc2fbb7bd9467d9683ce6a8f6c255, type: 3}
+  caveAudio: {fileID: 8300000, guid: dafa5b3239c0347afbb6a5e3d8e7feaf, type: 3}
   rainAudio: {fileID: 8300000, guid: 8c268052445e34311a684c1a6088e8eb, type: 3}
-  thunderAudio: {fileID: 0}
   rainParticleSystem: {fileID: 7753435639903207061}
 --- !u!82 &7144237416620575502
 AudioSource:
@@ -10440,6 +10441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire_PSys_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -10578,6 +10584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
       propertyPath: m_TagString
       value: Lantern
       objectReference: {fileID: 0}
@@ -10605,6 +10616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164479210979, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210980, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -10753,10 +10769,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 8769871397535508038}
-  textIntensity: 0
   deincrementIntensity: 0.9
   deincrementRange: 0.7
-  resetLantern: 0
+  resetFlag: 0
+  halfIntensityFlag: 0
+  nearlyOutFlag: 0
 --- !u!4 &8769871398574716636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8374209163406573715, guid: b5c4d598badfa5645855c4c8be16818f,
@@ -10798,6 +10815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire_PSys_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -10936,6 +10958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
       propertyPath: m_TagString
       value: Lantern
       objectReference: {fileID: 0}
@@ -10963,6 +10990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164479210979, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210980, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -11140,10 +11172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 6160098217523762020}
-  textIntensity: 0
   deincrementIntensity: 0.9
   deincrementRange: 0.7
-  resetLantern: 0
+  resetFlag: 0
+  halfIntensityFlag: 0
+  nearlyOutFlag: 0
 --- !u!1001 &6135181625077408043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11152,13 +11185,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1380566123568001457}
     m_Modifications:
+    - target: {fileID: 1161073074001178, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503630857047238, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568547075180902, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1882602143141976, guid: 56c82061e6c4de742a208837848be55a, type: 3}
       propertyPath: m_Name
       value: Latern1
       objectReference: {fileID: 0}
     - target: {fileID: 1882602143141976, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882602143141976, guid: 56c82061e6c4de742a208837848be55a, type: 3}
       propertyPath: m_TagString
       value: LanternColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977742870043014, guid: 56c82061e6c4de742a208837848be55a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4460530275303074, guid: 56c82061e6c4de742a208837848be55a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11202,6 +11255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
       propertyPath: m_TagString
       value: Lantern
       objectReference: {fileID: 0}
@@ -11230,6 +11288,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 2752105271077066283, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2752105271077066284, guid: 56c82061e6c4de742a208837848be55a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11244,6 +11307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752105272153895768, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3395183389260424769, guid: 56c82061e6c4de742a208837848be55a, type: 3}
@@ -11274,6 +11342,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1783669267851241081}
+    - targetCorrespondingSourceObject: {fileID: 2752105271045612480, guid: 56c82061e6c4de742a208837848be55a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5233663755197441137}
   m_SourcePrefab: {fileID: 100100000, guid: 56c82061e6c4de742a208837848be55a, type: 3}
 --- !u!1 &6134530624293237107 stripped
 GameObject:
@@ -11298,7 +11370,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.16326939
   m_Height: 0.4838787
@@ -11359,10 +11431,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 8292809197282214634}
-  textIntensity: 0
   deincrementIntensity: 0.9
   deincrementRange: 0.7
-  resetLantern: 0
+  resetFlag: 0
+  halfIntensityFlag: 0
+  nearlyOutFlag: 0
+--- !u!82 &5233663755197441137
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292809197282214635}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4d046849d56554571b01fedab7d4a01c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8292809198321291891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2752105272153895768, guid: 56c82061e6c4de742a208837848be55a,
@@ -11434,6 +11603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650377203480040043, guid: 2aa99bc1947a948b09b5a0e71495c100,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -11480,7 +11654,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.13554373, y: 0.31475395, z: 0.032267366}
   m_Center: {x: 0.043144133, y: 0.23232079, z: 0.0002541184}
@@ -11496,6 +11670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire_PSys_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209163406573712, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -11619,6 +11798,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164447748104, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
       propertyPath: m_TagString
       value: Lantern
       objectReference: {fileID: 0}
@@ -11646,6 +11830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374209164479210979, guid: b5c4d598badfa5645855c4c8be16818f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8374209164479210980, guid: b5c4d598badfa5645855c4c8be16818f,
         type: 3}
@@ -11808,7 +11997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 265091634101508208}
-  textIntensity: 0
   deincrementIntensity: 0.9
   deincrementRange: 0.7
-  resetLantern: 0
+  resetFlag: 0
+  halfIntensityFlag: 0
+  nearlyOutFlag: 0

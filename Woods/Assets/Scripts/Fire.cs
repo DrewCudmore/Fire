@@ -24,6 +24,7 @@ public class Fire : MonoBehaviour
     private GameManager gameManager;
     private TextPanel textPanel;
     private AudioSource audioSource;
+    private Lantern lantern;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Fire : MonoBehaviour
         nearlyOutIntensity = myLight.intensity / 10;
 
         audioSource = GetComponent<AudioSource>();
+        lantern = GameObject.FindGameObjectWithTag("LanternColor").GetComponent<Lantern>();
     }
 
     // Update is called once per frame
@@ -69,7 +71,6 @@ public class Fire : MonoBehaviour
 
     public void ResetLantern()
     {
-        Lantern lantern = GameObject.FindGameObjectWithTag("LanternColor").GetComponent<Lantern>();
         lantern.changeColorRegular = true;
         lantern.ChangeColor();
 

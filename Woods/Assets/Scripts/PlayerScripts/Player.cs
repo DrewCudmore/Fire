@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         gameManager = GameManager.Instance;
         inventoryManager = FindObjectOfType<InventoryManager>();
         textPanel = FindObjectOfType<TextPanel>();
-        textPanel.DisplayText("My car! I should find a way to get back up there.");
+        textPanel.DisplayText("My car! I should find a way to get back up there.", false);
 
     }
 

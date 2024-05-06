@@ -63,7 +63,7 @@ public class TextPanel : MonoBehaviour
         displayText.text = text;
 
         // Only want audio for hints, otherwise its too common
-        if (isHint) audioSource?.Play();
+        if (isHint) { audioSource?.Play(); }
 
         // Activate the panel
         ActivatePanel();
