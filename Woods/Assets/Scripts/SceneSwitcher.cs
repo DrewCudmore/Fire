@@ -18,7 +18,7 @@ public class SceneSwitcher : MonoBehaviour
             Debug.LogError("No AudioSource component found!");
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
 
         gameManager = GameManager.Instance;
     }
@@ -48,6 +48,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             PlayAudio();
             SceneManager.LoadScene(sceneToSwitchTo);
+            Destroy(this.gameObject, 2F);
         }
     }
 
