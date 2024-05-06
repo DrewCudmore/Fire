@@ -5151,7 +5151,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -5227,7 +5227,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206997195}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b990dd78d721d4ce8a33b6f643073522, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16688,7 +16688,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -16764,7 +16764,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604500685}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b990dd78d721d4ce8a33b6f643073522, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -19136,7 +19136,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee07282eb44ae471691148f285b4c2ef, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.411
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -51005,7 +51005,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865617893}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b990dd78d721d4ce8a33b6f643073522, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

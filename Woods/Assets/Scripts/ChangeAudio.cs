@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class ExampleClass : MonoBehaviour
+public class ChangeAudio : MonoBehaviour
 {
     public AudioClip otherClip;
 
@@ -12,8 +12,8 @@ public class ExampleClass : MonoBehaviour
         AudioSource audio = GetComponent<AudioSource>();
 
         audio.Play();
-        yield return new WaitForSeconds(15);
-        audio.volume = 0.1F;
+        yield return new WaitForSeconds(14);
+        audio.volume = 0.2F;
         audio.clip = otherClip;
         audio.Play();
     }
