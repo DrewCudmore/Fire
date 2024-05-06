@@ -12,7 +12,7 @@ public class ChangeAudio : MonoBehaviour
         AudioSource audio = GetComponent<AudioSource>();
 
         audio.Play();
-        yield return new WaitForSeconds(14);
+        yield return new WaitForSeconds(4.5f);
         audio.volume = 0.2F;
         audio.clip = otherClip;
         audio.Play();
